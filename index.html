@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Reverse Mortgage Templates · Anderson Collaborative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  /* ============ RESET & BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #1a1d24;
+    background: #f4f1ea;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  :root {
+    --ink: #0a0e1a;
+    --ink-2: #0d1220;
+    --accent: #c9a961;
+    --accent-soft: #d8bd7d;
+    --cream: #f4f1ea;
+    --cream-2: #ebe6d8;
+    --slate: #4a4f5a;
+    --slate-light: #8a8f99;
+    --line-dark: rgba(255,255,255,0.08);
+    --line-light: rgba(10,14,26,0.10);
+  }
+
+  /* ============ TYPOGRAPHY ============ */
+  .display { font-family: 'Space Grotesk', sans-serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1.02; }
+  .serif-italic { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ============ LAYOUT ============ */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  section { position: relative; }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 32px;
+    background: rgba(10, 14, 26, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-dark);
+    transition: background 0.3s ease;
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wordmark::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: rgba(244, 241, 234, 0.7);
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 140px 32px 80px;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?auto=format&fit=crop&w=2400&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+    filter: grayscale(40%) contrast(1.1);
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(201, 169, 97, 0.10) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.92) 100%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 100px;
+    color: var(--accent);
+    margin-bottom: 56px;
+  }
+  .kicker .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .hero-eyebrow {
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(44px, 7.2vw, 108px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 32px;
+    max-width: 1100px;
+  }
+  .hero h1 .accent {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: -0.015em;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 1.35vw, 19px);
+    color: rgba(244, 241, 234, 0.7);
+    max-width: 640px;
+    margin-bottom: 56px;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 30px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+  }
+  .hero-cta:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(201,169,97,0.25);
+  }
+  .hero-cta .arrow { transition: transform 0.25s ease; }
+  .hero-cta:hover .arrow { transform: translateY(3px); }
+
+  .hero-meta {
+    position: absolute;
+    bottom: 48px;
+    left: 32px;
+    right: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244,241,234,0.45);
+  }
+  .hero-meta .col { max-width: 240px; }
+
+  /* ============ EXPLAINER ============ */
+  .explainer {
+    padding: 140px 32px;
+    background: var(--cream);
+    border-top: 1px solid var(--line-light);
+  }
+  .explainer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 120px;
+  }
+  .explainer h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .explainer h2 .em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .explainer-body p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--slate);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+  .explainer-body p:last-child { margin-bottom: 0; }
+  .explainer-body strong { color: var(--ink); font-weight: 600; }
+  .section-eyebrow {
+    color: var(--slate-light);
+    margin-bottom: 28px;
+    display: block;
+  }
+  .section-eyebrow::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  /* ============ TEMPLATES ============ */
+  .templates {
+    padding: 140px 32px 160px;
+    background: var(--cream);
+    border-top: 1px solid var(--line-light);
+  }
+  .templates-header {
+    max-width: 1280px;
+    margin: 0 auto 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .templates-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    max-width: 720px;
+  }
+  .templates-header h2 .em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .templates-header p {
+    font-size: 15px;
+    color: var(--slate);
+    max-width: 320px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .cards {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .card {
+    display: block;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--line-light);
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(10,14,26,0.12);
+    border-color: var(--accent);
+  }
+  .card-image {
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
+  }
+  .card-num {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    z-index: 2;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: #fff;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .card-theme {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .card-image.theme-1 {
+    background-image: url('https://images.unsplash.com/photo-1582530239240-13c00ce14e9d?auto=format&fit=crop&w=1400&q=80');
+  }
+  .card-image.theme-2 {
+    background-image: url('https://images.unsplash.com/photo-1564366522991-c2a82be1a82c?auto=format&fit=crop&w=1400&q=80');
+  }
+  .card-image.theme-3 {
+    background-image: url('https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?auto=format&fit=crop&w=1400&q=80');
+  }
+  .card-body {
+    padding: 32px 28px 30px;
+  }
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .card .city {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .card .lender {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.55;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-light);
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: gap 0.25s ease, color 0.25s ease;
+  }
+  .card:hover .card-link {
+    gap: 14px;
+    color: var(--accent);
+  }
+
+  /* ============ WHY ANDERSON ============ */
+  .why {
+    padding: 140px 32px;
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .why-inner { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; }
+  .why h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5.2vw, 76px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    margin-bottom: 24px;
+  }
+  .why h2 .em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .why-lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(244,241,234,0.65);
+    max-width: 640px;
+    margin-bottom: 80px;
+    font-weight: 300;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-bottom: 100px;
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .stat {
+    padding: 48px 32px 48px 0;
+    border-right: 1px solid var(--line-dark);
+  }
+  .stat:last-child { border-right: none; padding-right: 0; }
+  .stat .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(48px, 5.5vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .stat .label {
+    font-size: 14px;
+    color: rgba(244,241,234,0.6);
+    line-height: 1.5;
+    max-width: 280px;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  .pillar {
+    border-top: 1px solid var(--accent);
+    padding-top: 28px;
+  }
+  .pillar .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+  }
+  .pillar h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-bottom: 14px;
+  }
+  .pillar p {
+    font-size: 14px;
+    color: rgba(244,241,234,0.6);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .pullquote {
+    margin: 100px auto 0;
+    max-width: 900px;
+    text-align: center;
+  }
+  .pullquote p {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.2;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+  .pullquote p::before, .pullquote p::after {
+    color: var(--accent);
+    font-style: normal;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+  }
+  .pullquote p::before { content: '“ '; }
+  .pullquote p::after { content: ' ”'; }
+  .pullquote .attr {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244,241,234,0.4);
+    margin-top: 28px;
+  }
+
+  /* ============ PROCESS ============ */
+  .process {
+    padding: 140px 32px;
+    background: var(--cream);
+    border-top: 1px solid var(--line-light);
+  }
+  .process-inner { max-width: 1280px; margin: 0 auto; }
+  .process-header { margin-bottom: 80px; max-width: 800px; }
+  .process h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .process h2 .em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .process-header p {
+    font-size: 17px;
+    color: var(--slate);
+    line-height: 1.6;
+    max-width: 580px;
+    font-weight: 300;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    counter-reset: step;
+  }
+  .step {
+    padding-top: 32px;
+    border-top: 1px solid var(--ink);
+    position: relative;
+  }
+  .step::before {
+    counter-increment: step;
+    content: '0' counter(step);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .step h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .step p {
+    font-size: 15px;
+    color: var(--slate);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ============ CLOSING CTA ============ */
+  .closing {
+    padding: 160px 32px;
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201, 169, 97, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(201, 169, 97, 0.10) 0%, transparent 50%);
+  }
+  .closing-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .closing .eyebrow {
+    color: var(--accent);
+    margin-bottom: 40px;
+    display: inline-block;
+  }
+  .closing h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(44px, 7vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 48px;
+  }
+  .closing h2 .em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .closing-sub {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(244,241,234,0.7);
+    max-width: 600px;
+    margin: 0 auto 56px;
+    font-weight: 300;
+  }
+  .closing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 38px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+  }
+  .closing-btn:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(201,169,97,0.3);
+  }
+  .closing-btn .arrow { transition: transform 0.25s ease; }
+  .closing-btn:hover .arrow { transform: translateX(4px); }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    padding: 60px 32px 50px;
+    background: var(--ink-2);
+    color: rgba(244,241,234,0.6);
+    border-top: 1px solid var(--line-dark);
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .footer-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--cream);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .footer-brand .line {
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    color: rgba(244,241,234,0.5);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .footer-brand .line a:hover { color: var(--accent); }
+  .footer-note {
+    max-width: 460px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(244,241,234,0.4);
+  }
+  .footer-note .placeholder {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1024px) {
+    .explainer-inner { grid-template-columns: 1fr; gap: 48px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .cards .card:last-child { grid-column: 1 / -1; max-width: 50%; }
+    .pillars { grid-template-columns: repeat(2, 1fr); gap: 48px 40px; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 36px 0; }
+    .stat:last-child { border-bottom: none; }
+    .steps { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 720px) {
+    .container, .nav { padding-left: 20px; padding-right: 20px; }
+    .nav { padding-top: 14px; padding-bottom: 14px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 12px; }
+    .hero { padding: 120px 20px 100px; }
+    .hero-meta { display: none; }
+    .kicker { font-size: 10px; padding: 6px 12px; margin-bottom: 36px; }
+    .explainer, .templates, .why, .process, .closing { padding-left: 20px; padding-right: 20px; padding-top: 90px; padding-bottom: 90px; }
+    .cards { grid-template-columns: 1fr; }
+    .cards .card:last-child { max-width: 100%; }
+    .pillars { grid-template-columns: 1fr; gap: 36px; }
+    .templates-header { flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; gap: 32px; }
+  }
+  @media (max-width: 480px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="wordmark">Anderson Collaborative</a>
+      <ul class="nav-links">
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-inner">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="eyebrow">Private Preview · Prepared by Anderson Collaborative</span>
+      </div>
+
+      <div class="hero-eyebrow eyebrow">A custom website for every loan officer.</div>
+
+      <h1>
+        You tell us<br />
+        what you want.<br />
+        <span class="accent">We take care of it.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Three custom-built landing pages. Three different markets, three different lenders, three entirely
+        different visual identities — built to demonstrate the kind of bespoke web experience we can
+        deliver for every loan officer in your network.
+      </p>
+
+      <a href="#templates" class="hero-cta">
+        View the Templates <span class="arrow">↓</span>
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="col">Reverse Mortgage<br/>Templates Showcase</div>
+      <div class="col" style="text-align: right;">Edition 01 · 2026<br/>Confidential</div>
+    </div>
+  </section>
+
+  <!-- ============ EXPLAINER ============ -->
+  <section class="explainer" id="approach">
+    <div class="explainer-inner">
+      <div>
+        <span class="eyebrow section-eyebrow">How to read this</span>
+        <h2>About<br/>these <span class="em">templates.</span></h2>
+      </div>
+      <div class="explainer-body">
+        <p>
+          Each of the three pages linked below is a <strong>fully fictional demonstration</strong> — invented
+          loan officers, invented lenders, invented testimonials. The names, faces, and stories are made up
+          on purpose. What's real is the build quality.
+        </p>
+        <p>
+          All three pages share the same underlying content architecture — a hero, an about section, a
+          city-feature panel, an experience block, a location map, and a footer. That's deliberate. The
+          point of this exercise is to show what happens when an identical content brief is run through
+          <strong>three entirely different design systems</strong>: one classic-corporate, one southwest-warm,
+          one southern-editorial.
+        </p>
+        <p>
+          For every lender across your national network, we'll deliver a uniquely branded, conversion-focused
+          landing experience — calibrated to their market, their personality, and their compliance
+          standards. <strong>Zero lift from your team.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEMPLATES ============ -->
+  <section class="templates" id="templates">
+    <div class="templates-header">
+      <h2>Three lenders.<br/>Three markets.<br/><span class="em">Three identities.</span></h2>
+      <p>
+        Click any card below to open the full landing page in a new tab. Each one is a complete,
+        production-ready build.
+      </p>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="john-doe-loan-officer.html">
+        <div class="card-image theme-1">
+          <div class="card-num">01 / Coastal Corporate</div>
+          <div class="card-theme">Birmingham, AL</div>
+        </div>
+        <div class="card-body">
+          <h3>John Doe</h3>
+          <div class="city">Birmingham, Alabama</div>
+          <div class="lender">Simple Reverse Mortgage — a classic dark-blue and gold corporate identity built for trust and longevity.</div>
+          <span class="card-link">View Page <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="marcus-reeves-loan-officer.html">
+        <div class="card-image theme-2">
+          <div class="card-num">02 / Sun Valley Southwest</div>
+          <div class="card-theme">Phoenix, AZ</div>
+        </div>
+        <div class="card-body">
+          <h3>Marcus Reeves</h3>
+          <div class="city">Phoenix, Arizona</div>
+          <div class="lender">Sun Valley Reverse — a warm terracotta-and-desert identity tuned to the southwest market's regional aesthetic.</div>
+          <span class="card-link">View Page <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="jameson-whitfield-loan-officer.html">
+        <div class="card-image theme-3">
+          <div class="card-num">03 / Southern Editorial</div>
+          <div class="card-theme">Atlanta, GA</div>
+        </div>
+        <div class="card-body">
+          <h3>Jameson Whitfield</h3>
+          <div class="city">Atlanta, Georgia</div>
+          <div class="lender">Peachtree Reverse Mortgage Group — an editorial green-and-peach palette with magazine-grade typography and pacing.</div>
+          <span class="card-link">View Page <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ WHY ANDERSON ============ -->
+  <section class="why" id="capabilities">
+    <div class="why-inner">
+      <span class="eyebrow section-eyebrow" style="color: var(--accent);">Why Anderson Collaborative</span>
+      <h2>An agency built for <span class="em">scale</span> — and for the details.</h2>
+      <p class="why-lede">
+        Innovative, data-driven strategies delivered with full transparency. We've built our practice
+        around one principle: your success is our success.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">500+</div>
+          <div class="label">Client projects shipped across the country.</div>
+        </div>
+        <div class="stat">
+          <div class="num">100+</div>
+          <div class="label">Industries served — including financial services & lending.</div>
+        </div>
+        <div class="stat">
+          <div class="num">$150M+</div>
+          <div class="label">In managed advertising spend to date.</div>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="num">01</div>
+          <h3>Strategic Planning</h3>
+          <p>Market research, competitive analysis, and campaign strategy grounded in real data — not opinion.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">02</div>
+          <h3>Identity & Experience</h3>
+          <p>Custom branding, website design, and content production engineered to convert and to last.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">03</div>
+          <h3>Growth & Promotion</h3>
+          <p>Paid, earned, and owned media programs — plus AI-enabled tooling for compounding performance.</p>
+        </div>
+        <div class="pillar">
+          <div class="num">04</div>
+          <h3>Data & Optimization</h3>
+          <p>Continuous measurement and iteration with full transparency for true peace of mind.</p>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        <p>Cutting-edge marketing solutions that work — built around memorable user experience.</p>
+        <div class="attr">— The Anderson Collaborative Approach</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process">
+    <div class="process-inner">
+      <div class="process-header">
+        <span class="eyebrow section-eyebrow">How it works</span>
+        <h2>Three steps. <span class="em">Zero lift on you.</span></h2>
+        <p>
+          From roster to launch, the work sits with us. Your team stays focused on what they're paid to
+          do: close loans.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <h3>Send us your roster.</h3>
+          <p>
+            Loan officer list, headshots, lender brand standards, compliance disclosures. Whatever you
+            already have — we'll work with it. Whatever you're missing — we'll produce it.
+          </p>
+        </div>
+        <div class="step">
+          <h3>We design every page.</h3>
+          <p>
+            Custom architecture, custom copy, curated photography, region-aware visual identity, and
+            lender-compliant disclosures. Each officer gets their own purpose-built landing experience.
+          </p>
+        </div>
+        <div class="step">
+          <h3>We host, maintain, iterate.</h3>
+          <p>
+            Hosting, analytics, A/B tests, performance tuning, and ongoing edits — all handled. You stay
+            focused on closing loans; we stay focused on conversion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="closing" id="contact">
+    <div class="closing-inner">
+      <span class="eyebrow">The offer in one sentence</span>
+      <h2>You tell us<br/>what you want.<br/><span class="em">We take care of it.</span></h2>
+      <p class="closing-sub">
+        Reply to this email to talk through your roster, your timeline, and your brand standards.
+        We'll come back to you with a proposal within 48 hours.
+      </p>
+      <a href="mailto:hello@andersoncollaborative.com?subject=Reverse%20Mortgage%20Network%20%E2%80%94%20Custom%20Landing%20Pages" class="closing-btn">
+        Start the conversation <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Anderson Collaborative
+        <div class="line">
+          <a href="https://andersoncollaborative.com" target="_blank" rel="noopener">andersoncollaborative.com</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+13057770471">305-777-0471</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        This preview was prepared exclusively for <span class="placeholder">[Prospect Name]</span>.
+        All three lender pages and personnel referenced in this deck are fictional demonstrations
+        created for illustrative purposes only.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav becomes more opaque after scroll past hero
+    (function () {
+      var nav = document.getElementById('nav');
+      var hero = document.querySelector('.hero');
+      function onScroll() {
+        var threshold = (hero ? hero.offsetHeight : 600) - 100;
+        if (window.scrollY > threshold) {
+          nav.style.background = 'rgba(10, 14, 26, 0.96)';
+        } else {
+          nav.style.background = 'rgba(10, 14, 26, 0.78)';
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Reeves | Reverse Mortgage Specialist | Sun Valley Reverse — Phoenix, AZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracotta: #c65d3d;
+      --sunset:     #e8915c;
+      --sand:       #f5ead4;
+      --sand-deep:  #ecdcb8;
+      --saguaro:    #5a7b5a;
+      --charcoal:   #2c1f1a;
+      --ink:        #3d2b22;
+      --muted:      #6b554a;
+      --cream:      #fbf6ea;
+      --line:       rgba(44, 31, 26, 0.10);
+      --fd: 'Fraunces', Georgia, serif;
+      --fb: 'Inter', system-ui, -apple-system, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--fb);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ NAVIGATION ============ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(251, 246, 234, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 1.1rem 3rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-left {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Sun-ray mini wordmark icon */
+    .nav-sun {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, var(--sunset) 0%, var(--terracotta) 70%);
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(232, 145, 92, 0.18);
+    }
+    .nav-sun::before, .nav-sun::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background:
+        conic-gradient(from 0deg,
+          transparent 0 6deg, var(--terracotta) 6deg 8deg, transparent 8deg 30deg,
+          transparent 30deg 36deg, var(--terracotta) 36deg 38deg, transparent 38deg 60deg,
+          transparent 60deg 66deg, var(--terracotta) 66deg 68deg, transparent 68deg 90deg,
+          transparent 90deg 96deg, var(--terracotta) 96deg 98deg, transparent 98deg 120deg,
+          transparent 120deg 126deg, var(--terracotta) 126deg 128deg, transparent 128deg 150deg,
+          transparent 150deg 156deg, var(--terracotta) 156deg 158deg, transparent 158deg 180deg,
+          transparent 180deg 186deg, var(--terracotta) 186deg 188deg, transparent 188deg 210deg,
+          transparent 210deg 216deg, var(--terracotta) 216deg 218deg, transparent 218deg 240deg,
+          transparent 240deg 246deg, var(--terracotta) 246deg 248deg, transparent 248deg 270deg,
+          transparent 270deg 276deg, var(--terracotta) 276deg 278deg, transparent 278deg 300deg,
+          transparent 300deg 306deg, var(--terracotta) 306deg 308deg, transparent 308deg 330deg,
+          transparent 330deg 336deg, var(--terracotta) 336deg 338deg, transparent 338deg 360deg
+        );
+      -webkit-mask: radial-gradient(circle, transparent 16px, black 17px, black 22px, transparent 23px);
+              mask: radial-gradient(circle, transparent 16px, black 17px, black 22px, transparent 23px);
+      opacity: 0.55;
+    }
+    .nav-sun::after { transform: rotate(11deg); opacity: 0.3; }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo {
+      font-family: var(--fd);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      font-variation-settings: "opsz" 100, "SOFT" 50;
+    }
+
+    .nav-subtext {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -4px;
+      height: 1px;
+      background: var(--terracotta);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease);
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .cta-btn {
+      background: var(--terracotta);
+      color: var(--cream);
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.3s var(--ease);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(198, 93, 61, 0.25);
+    }
+    .cta-btn:hover {
+      background: var(--charcoal);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(44, 31, 26, 0.25);
+    }
+
+    /* ============ SIDE NAV ============ */
+    .sidenav {
+      position: fixed;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .sidenav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--charcoal);
+      opacity: 0.45;
+      transition: opacity 0.3s;
+    }
+    .sidenav-item:hover, .sidenav-item.active { opacity: 1; }
+    .sidenav-dot {
+      width: 12px; height: 12px;
+      border: 1.5px solid var(--terracotta);
+      background: transparent;
+      flex-shrink: 0;
+      transition: all 0.4s var(--ease);
+      transform: rotate(45deg); /* diamond — adobe motif */
+    }
+    .sidenav-item.active .sidenav-dot {
+      background: var(--terracotta);
+      box-shadow: 0 0 0 4px rgba(198, 93, 61, 0.18);
+    }
+    .sidenav-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s, transform 0.3s;
+      white-space: nowrap;
+    }
+    .sidenav-item.active .sidenav-label { opacity: 0.75; transform: translateX(0); }
+
+    /* ============ SECTIONS ============ */
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 5rem 5rem 8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Arched divider helper (top of a section) */
+    .arch-top {
+      position: absolute;
+      top: -1px; left: 0; right: 0;
+      height: 80px;
+      background: inherit;
+      -webkit-mask: radial-gradient(120% 100% at 50% 100%, black 49%, transparent 50%);
+              mask: radial-gradient(120% 100% at 50% 100%, black 49%, transparent 50%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* ============ HERO ============ */
+    #hero {
+      background:
+        linear-gradient(to right, rgba(44, 31, 26, 0.58) 0%, rgba(198, 93, 61, 0.35) 60%, rgba(232, 145, 92, 0.25) 100%),
+        url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-bottom: 7rem;
+      color: var(--cream);
+    }
+
+    /* Decorative sun ray behind hero text */
+    .hero-rays {
+      position: absolute;
+      top: 12%;
+      right: -120px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(245, 234, 212, 0.22) 0%, rgba(232, 145, 92, 0.0) 60%);
+      pointer-events: none;
+    }
+    .hero-rays::before {
+      content: '';
+      position: absolute;
+      inset: 80px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 234, 212, 0.18);
+    }
+    .hero-rays::after {
+      content: '';
+      position: absolute;
+      inset: 140px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 234, 212, 0.12);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid rgba(245, 234, 212, 0.35);
+      background: rgba(44, 31, 26, 0.25);
+      backdrop-filter: blur(8px);
+      border-radius: 999px;
+      padding: 0.55rem 1.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 2rem;
+      z-index: 3;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--sunset);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--sunset);
+    }
+
+    #hero h1 {
+      font-family: var(--fd);
+      font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.02;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+      z-index: 3;
+      position: relative;
+    }
+    #hero h1 em {
+      font-style: italic;
+      color: var(--sunset);
+      font-weight: 400;
+    }
+
+    .hero-credentials {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+      z-index: 3;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(251, 246, 234, 0.96);
+      padding: 0.65rem 1.1rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(44, 31, 26, 0.18);
+    }
+    .logo-group img {
+      height: 32px;
+      width: auto;
+    }
+    .logo-text-fallback {
+      font-family: var(--fd);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+    }
+    .logo-text {
+      color: var(--charcoal);
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+    .logo-text strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    #hero .subtitle {
+      font-size: 1.1rem;
+      color: rgba(251, 246, 234, 0.88);
+      margin-bottom: 0.5rem;
+      max-width: 620px;
+      line-height: 1.7;
+      z-index: 3;
+      position: relative;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      z-index: 3;
+    }
+    .hero-cta .btn {
+      padding: 1rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.4s var(--ease);
+    }
+    .btn-primary {
+      background: var(--sunset);
+      color: var(--charcoal);
+      border: 1.5px solid var(--sunset);
+    }
+    .btn-primary:hover {
+      background: var(--cream);
+      border-color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--sand);
+      border: 1.5px solid rgba(245, 234, 212, 0.6);
+    }
+    .btn-secondary:hover {
+      background: rgba(245, 234, 212, 0.12);
+      border-color: var(--sand);
+    }
+
+    /* ============ ABOUT ============ */
+    #about {
+      background: var(--cream);
+      flex-direction: row;
+      gap: 5rem;
+    }
+
+    .about-image-wrap {
+      flex: 0 0 380px;
+      position: relative;
+    }
+
+    /* Adobe-arch picture frame */
+    .about-image {
+      width: 380px;
+      height: 500px;
+      border-top-left-radius: 190px;
+      border-top-right-radius: 190px;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      overflow: hidden;
+      box-shadow:
+        0 25px 60px rgba(198, 93, 61, 0.22),
+        0 0 0 10px var(--sand) inset;
+      background: linear-gradient(180deg, var(--sunset), var(--terracotta));
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Decorative diamond accents */
+    .about-deco {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 1.5px solid var(--terracotta);
+      transform: rotate(45deg);
+      opacity: 0.5;
+    }
+    .about-deco.dec-1 { top: -30px; left: -30px; }
+    .about-deco.dec-2 { bottom: 40px; right: -30px; width: 40px; height: 40px; border-color: var(--saguaro); }
+
+    .about-content {
+      flex: 1;
+      max-width: 620px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.2rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 28px; height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: var(--fd);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      color: var(--charcoal);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 144, "SOFT" 80;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--terracotta);
+      font-weight: 400;
+    }
+
+    .about-content p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1.3rem;
+      color: var(--muted);
+    }
+    .about-content p strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .about-signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-signature .sig-item .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--saguaro);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .about-signature .sig-item .value {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    /* ============ EXPERIENCE / STATS ============ */
+    #experience {
+      background: var(--sand);
+      flex-direction: column;
+      position: relative;
+    }
+    #experience .arch-top { background: var(--cream); }
+
+    /* faint cactus silhouette decoration */
+    .exp-bg-deco {
+      position: absolute;
+      right: 4%;
+      top: 18%;
+      width: 280px;
+      height: 280px;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .experience-header {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .experience-header .section-label { justify-content: center; }
+    .experience-header .section-label::before,
+    .experience-header .section-label::after {
+      content: '';
+      width: 28px; height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .experience-card {
+      padding: 2.5rem 2rem;
+      background: var(--cream);
+      border-radius: 4px 4px 60px 60px / 4px 4px 80px 80px;
+      transition: all 0.45s var(--ease);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(198, 93, 61, 0.12);
+    }
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--sunset));
+    }
+    .experience-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(198, 93, 61, 0.18);
+    }
+    .experience-card .stat {
+      font-family: var(--fd);
+      font-size: 2.8rem;
+      font-weight: 500;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 144;
+    }
+    .experience-card h3 {
+      font-family: var(--fd);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    .experience-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ============ PHOENIX CITY ============ */
+    #phoenix {
+      background: var(--cream);
+      flex-direction: row;
+      gap: 5rem;
+      align-items: center;
+    }
+    .city-image {
+      flex: 0 0 460px;
+      height: 560px;
+      border-radius: 230px 230px 16px 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(44, 31, 26, 0.22);
+      position: relative;
+      order: 2;
+    }
+    .city-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .city-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(44, 31, 26, 0.25));
+      pointer-events: none;
+    }
+
+    .city-content {
+      flex: 1;
+      max-width: 600px;
+      order: 1;
+    }
+    .city-content p {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin-bottom: 1.3rem;
+      color: var(--muted);
+    }
+    .highlight {
+      color: var(--terracotta);
+      font-weight: 600;
+      font-style: italic;
+      font-family: var(--fd);
+    }
+
+    .city-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.8rem;
+    }
+    .city-tag {
+      padding: 0.45rem 1rem;
+      border: 1px solid rgba(198, 93, 61, 0.3);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: var(--terracotta);
+      background: rgba(245, 234, 212, 0.6);
+      font-weight: 500;
+    }
+
+    /* ============ WHY CHOOSE ============ */
+    #why-choose {
+      background: var(--charcoal);
+      color: var(--cream);
+      flex-direction: column;
+      position: relative;
+    }
+    #why-choose .arch-top { background: var(--cream); }
+
+    #why-choose .section-label { color: var(--sunset); }
+    #why-choose .section-label::before { background: var(--sunset); }
+    #why-choose .section-title { color: var(--cream); }
+    #why-choose .section-title em { color: var(--sunset); }
+
+    .why-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
+    }
+    .why-header .section-label { justify-content: center; }
+    .why-header .section-label::after {
+      content: '';
+      width: 28px; height: 1.5px;
+      background: var(--sunset);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .why-card {
+      padding: 2.2rem 1.8rem;
+      border: 1px solid rgba(245, 234, 212, 0.12);
+      border-radius: 14px;
+      background: rgba(245, 234, 212, 0.03);
+      transition: all 0.4s var(--ease);
+      position: relative;
+    }
+    .why-card:hover {
+      border-color: rgba(232, 145, 92, 0.55);
+      background: rgba(232, 145, 92, 0.07);
+      transform: translateY(-5px);
+    }
+    .why-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--terracotta), var(--sunset));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 8px 22px rgba(232, 145, 92, 0.3);
+    }
+    .why-card h3 {
+      font-family: var(--fd);
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+      color: var(--sand);
+      font-weight: 600;
+    }
+    .why-card p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(245, 234, 212, 0.75);
+    }
+
+    /* ============ LOCATION ============ */
+    #contact-section {
+      background: var(--sand);
+      flex-direction: row;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+    #contact-section .arch-top { background: var(--charcoal); }
+
+    .location-map {
+      flex: 0 0 480px;
+      height: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 55px rgba(44, 31, 26, 0.2);
+      border: 8px solid var(--cream);
+    }
+    .location-map iframe {
+      width: 100%; height: 100%;
+      border: none;
+      display: block;
+    }
+    .location-content { flex: 1; max-width: 560px; }
+
+    .office-card {
+      background: var(--cream);
+      padding: 2rem 2.2rem;
+      border-radius: 18px;
+      border-left: 4px solid var(--terracotta);
+      margin-bottom: 1.8rem;
+      box-shadow: 0 14px 36px rgba(44, 31, 26, 0.06);
+    }
+    .office-card h3 {
+      font-family: var(--fd);
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .office-row {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.7rem;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .office-row .lbl {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--saguaro);
+      min-width: 70px;
+      padding-top: 3px;
+    }
+    .office-row a { color: var(--terracotta); text-decoration: none; font-weight: 600; }
+    .office-row a:hover { text-decoration: underline; }
+
+    .location-content > p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+      font-size: 0.98rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--charcoal);
+      color: rgba(245, 234, 212, 0.7);
+      padding: 4rem 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--sunset), var(--saguaro));
+    }
+    footer a {
+      color: var(--sunset);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    footer a:hover { color: var(--cream); }
+    .footer-content { max-width: 1100px; margin: 0 auto; }
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-brand .nav-sun { width: 38px; height: 38px; }
+    .footer-logo {
+      font-family: var(--fd);
+      font-size: 1.5rem;
+      color: var(--cream);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(245, 234, 212, 0.25);
+      margin: 1.5rem auto;
+    }
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .footer-logos img {
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: 0.65;
+    }
+    .footer-disclaimer {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      opacity: 0.55;
+      line-height: 1.7;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      section { padding: 6rem 2rem 4rem; }
+      #about, #phoenix, #contact-section {
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .about-image-wrap, .city-image, .location-map {
+        flex: 1;
+        width: 100%;
+        max-width: 480px;
+      }
+      .city-image { order: 1; }
+      .city-content { order: 2; }
+      .sidenav { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .nav-left { gap: 1rem; flex-wrap: wrap; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; width: 100%; }
+      section { padding: 5rem 1.5rem 3rem; }
+      #hero { padding-bottom: 4rem; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .hero-credentials { flex-direction: column; align-items: flex-start; }
+      .experience-grid, .why-grid { grid-template-columns: 1fr; }
+      .about-image { width: 100%; height: 460px; border-top-left-radius: 50%; border-top-right-radius: 50%; }
+      .city-image { height: 420px; border-radius: 50% 50% 16px 16px / 35% 35% 16px 16px; }
+      .location-map { height: 380px; flex: 1; }
+    }
+
+    /* Entrance anim */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    section { animation: fadeUp 0.7s var(--ease); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <div class="nav-logo-section">
+        <div class="nav-sun" aria-hidden="true"></div>
+        <div class="nav-logo-text">
+          <a href="#hero" class="nav-logo">Sun Valley Reverse</a>
+          <span class="nav-subtext">Marcus Reeves · NMLS 1847293</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#phoenix">Phoenix</a></li>
+        <li><a href="#why-choose">Why Choose</a></li>
+        <li><a href="#contact-section">Location</a></li>
+      </ul>
+    </div>
+    <a href="#contact" class="cta-btn">Get Started</a>
+  </nav>
+
+  <!-- SIDE NAV -->
+  <div class="sidenav">
+    <a href="#hero" class="sidenav-item active">
+      <div class="sidenav-dot"></div><span class="sidenav-label">Hero</span>
+    </a>
+    <a href="#about" class="sidenav-item">
+      <div class="sidenav-dot"></div><span class="sidenav-label">About</span>
+    </a>
+    <a href="#experience" class="sidenav-item">
+      <div class="sidenav-dot"></div><span class="sidenav-label">Experience</span>
+    </a>
+    <a href="#phoenix" class="sidenav-item">
+      <div class="sidenav-dot"></div><span class="sidenav-label">Phoenix</span>
+    </a>
+    <a href="#why-choose" class="sidenav-item">
+      <div class="sidenav-dot"></div><span class="sidenav-label">Why</span>
+    </a>
+    <a href="#contact-section" class="sidenav-item">
+      <div class="sidenav-dot"></div><span class="sidenav-label">Location</span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-rays" aria-hidden="true"></div>
+    <span class="hero-badge">Reverse Mortgage Specialist · Phoenix, AZ</span>
+    <h1>Marcus Reeves<br><em>Retirement, refined.</em></h1>
+
+    <div class="hero-credentials">
+      <div class="logo-group">
+        <img src="https://www.guildmortgage.com/wp-content/themes/guildmortgage/assets/images/logo.svg"
+             alt="Guild Mortgage"
+             onerror="this.outerHTML='&lt;span class=&quot;logo-text-fallback&quot;&gt;GUILD MORTGAGE&lt;/span&gt;'">
+        <div class="logo-text">
+          <strong>Underwritten by</strong>
+          <span>Guild Mortgage Co.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="subtitle">
+      22+ years guiding Valley of the Sun homeowners 62+ through reverse mortgages with clarity, patience, and a steady hand — from Camelback to Scottsdale.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+      <a href="#about" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-image-wrap">
+      <div class="about-deco dec-1" aria-hidden="true"></div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1750853752220-0facda334bd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=650&q=80" alt="Marcus Reeves, Reverse Mortgage Specialist">
+      </div>
+      <div class="about-deco dec-2" aria-hidden="true"></div>
+    </div>
+    <div class="about-content">
+      <span class="section-label">About Marcus</span>
+      <h2 class="section-title">A trusted hand in the <em>Valley of the Sun</em>.</h2>
+      <p>
+        I'm Marcus Reeves, founder of <strong>Sun Valley Reverse</strong> here in Phoenix.
+        For the past twenty-two years I've focused on one thing — helping homeowners 62 and older
+        turn the equity in their desert home into a stronger, more comfortable retirement.
+      </p>
+      <p>
+        Reverse mortgages aren't a product to push; they're a tool to fit. My role is to listen
+        first, run the numbers honestly, and make sure the math actually works for your life —
+        whether that's eliminating a monthly payment, funding healthcare, or simply giving you
+        breathing room to enjoy Arizona the way you've earned to.
+      </p>
+      <p>
+        Underwritten by <strong>Guild Mortgage</strong>, an Arizona-headquartered lender, every loan
+        I close carries the backing of one of the Southwest's most established mortgage banks —
+        paired with the kind of attention you can only get from someone who lives here.
+      </p>
+
+      <div class="about-signature">
+        <div class="sig-item">
+          <div class="label">NMLS</div>
+          <div class="value">#1847293</div>
+        </div>
+        <div class="sig-item">
+          <div class="label">Licensed In</div>
+          <div class="value">Arizona</div>
+        </div>
+        <div class="sig-item">
+          <div class="label">Specialty</div>
+          <div class="value">HECM &amp; Jumbo Reverse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="arch-top"></div>
+    <div class="experience-header">
+      <span class="section-label">Two Decades, Trusted Numbers</span>
+      <h2 class="section-title">22+ years of <em>steady</em> work for Arizona families.</h2>
+    </div>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <div class="stat">22+</div>
+        <h3>Years of Experience</h3>
+        <p>Specialized in reverse mortgage products through every market cycle since 2003 — recession, recovery, and historic rate swings.</p>
+      </div>
+      <div class="experience-card">
+        <div class="stat">2,400+</div>
+        <h3>Families Served</h3>
+        <p>Thousands of Arizona homeowners guided through HECM, HECM-for-purchase, and jumbo reverse mortgages with full transparency.</p>
+      </div>
+      <div class="experience-card">
+        <div class="stat">$680M+</div>
+        <h3>Funded Reverse Loans</h3>
+        <p>Over six hundred eighty million dollars in reverse mortgages closed — a record built one careful conversation at a time.</p>
+      </div>
+      <div class="experience-card">
+        <div class="stat">4.9★</div>
+        <h3>Client Rating</h3>
+        <p>Consistently rated 4.9 out of 5 by Phoenix-area clients for honesty, follow-through, and patient education.</p>
+      </div>
+      <div class="experience-card">
+        <div class="stat">30d</div>
+        <h3>Average Close</h3>
+        <p>Most reverse files close inside thirty days — paperwork handled with respect for your time and your privacy.</p>
+      </div>
+      <div class="experience-card">
+        <div class="stat">100%</div>
+        <h3>Licensed &amp; Compliant</h3>
+        <p>Fully licensed in Arizona, NMLS #1847293, FHA-approved, underwritten by Guild Mortgage Co., NMLS #3274.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOENIX -->
+  <section id="phoenix">
+    <div class="city-image">
+      <img src="https://images.unsplash.com/photo-1558366151-d11a5fc4e5ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Phoenix, Arizona skyline at dusk">
+    </div>
+    <div class="city-content">
+      <span class="section-label">Our City</span>
+      <h2 class="section-title">Phoenix — where <em>retirement finds its sun</em>.</h2>
+      <p>
+        From the foothills of <span class="highlight">Camelback Mountain</span> to the resort streets of the
+        <span class="highlight">Biltmore</span>, and along the quiet edge where Phoenix meets
+        <span class="highlight">Scottsdale</span> — the Valley of the Sun has become the country's
+        most sought-after retirement landscape.
+      </p>
+      <p>
+        Every winter, thousands relocate here from Minnesota, Michigan, Illinois, the Northeast — drawn
+        by the desert light, the dry air, and a slower pace of life. Many arrive with substantial
+        equity in their longtime homes. A reverse mortgage often becomes the bridge that lets them
+        settle into Arizona on their own terms.
+      </p>
+      <p>
+        I've spent my career in this market. I know what an Arcadia ranch trades for, how to value
+        a Moon Valley patio home, and what a North Scottsdale appraiser will actually accept. That
+        local fluency makes the difference between a loan that closes and a loan that gets stuck.
+      </p>
+
+      <div class="city-tags">
+        <span class="city-tag">Biltmore</span>
+        <span class="city-tag">Arcadia</span>
+        <span class="city-tag">Paradise Valley</span>
+        <span class="city-tag">North Scottsdale</span>
+        <span class="city-tag">Moon Valley</span>
+        <span class="city-tag">Ahwatukee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section id="why-choose">
+    <div class="arch-top"></div>
+    <div class="why-header">
+      <span class="section-label">Why Work With Me</span>
+      <h2 class="section-title">Honest counsel, <em>desert calm</em>, paperwork done right.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">☀</div>
+        <h3>Backed by Guild Mortgage</h3>
+        <p>Sun Valley Reverse closes every file through Guild Mortgage — a 60-year-old Arizona-headquartered lender with the balance sheet to fund what we promise.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◆</div>
+        <h3>Plainspoken Process</h3>
+        <p>Reverse mortgages get explained in plain English. No jargon, no pressure, no surprise fees on the closing disclosure.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⛰</div>
+        <h3>Local to the Valley</h3>
+        <p>Born and licensed in Arizona. I know the neighborhoods, the appraisers, and the title companies that move files efficiently.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✦</div>
+        <h3>Education-First</h3>
+        <p>Free in-office or Zoom sessions covering HECM rules, residual income, non-borrowing spouse protections, and tax implications.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">♥</div>
+        <h3>Family Inclusive</h3>
+        <p>Adult children and trusted advisors are welcome at every meeting. The best reverse decisions are made with the whole family informed.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Compliance First</h3>
+        <p>HUD-counseled, FHA-insured, fully disclosed. Every borrower completes independent counseling before we move forward — full stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="contact-section">
+    <div class="arch-top"></div>
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps?q=2415+E+Camelback+Rd,+Phoenix,+AZ+85016&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Sun Valley Reverse — Biltmore Office Location"></iframe>
+    </div>
+    <div class="location-content">
+      <span class="section-label">Visit Us</span>
+      <h2 class="section-title">Camelback &amp; <em>Biltmore</em>.</h2>
+      <div class="office-card">
+        <h3>Sun Valley Reverse — Biltmore Office</h3>
+        <div class="office-row">
+          <span class="lbl">Address</span>
+          <span>2415 E Camelback Rd, Suite 700<br>Phoenix, AZ 85016</span>
+        </div>
+        <div class="office-row">
+          <span class="lbl">Phone</span>
+          <span><a href="tel:+16025550184">(602) 555-0184</a></span>
+        </div>
+        <div class="office-row">
+          <span class="lbl">Email</span>
+          <span><a href="mailto:marcus@sunvalleyreverse.com">marcus@sunvalleyreverse.com</a></span>
+        </div>
+        <div class="office-row">
+          <span class="lbl">Hours</span>
+          <span>Monday–Friday, 9am–6pm MST<br>Saturdays by appointment</span>
+        </div>
+      </div>
+      <p>
+        Our office sits in the heart of the Biltmore corridor — easy in from Scottsdale, the 51,
+        and Paradise Valley. Free covered parking, ground-floor entry, and we always have cold
+        water and good shade.
+      </p>
+      <p>
+        Prefer to meet by phone or video? Most consultations begin that way. Whatever's easiest
+        for you and your family — we'll come to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="nav-sun" aria-hidden="true"></div>
+        <span class="footer-logo">Sun Valley Reverse</span>
+      </div>
+      <p>Marcus Reeves · Reverse Mortgage Specialist · Phoenix, AZ</p>
+
+      <div class="footer-divider"></div>
+
+      <p>
+        Ready to explore your options? Let's talk.<br>
+        <strong>Call:</strong> <a href="tel:+16025550184">(602) 555-0184</a> &nbsp;|&nbsp;
+        <strong>Email:</strong> <a href="mailto:marcus@sunvalleyreverse.com">marcus@sunvalleyreverse.com</a>
+      </p>
+
+      <div class="footer-logos">
+        <img src="https://www.guildmortgage.com/wp-content/themes/guildmortgage/assets/images/logo.svg"
+             alt="Guild Mortgage"
+             onerror="this.outerHTML='&lt;span style=&quot;font-family:Fraunces,serif;color:rgba(245,234,212,0.65);font-weight:700;letter-spacing:0.12em;font-size:0.9rem;&quot;&gt;GUILD MORTGAGE&lt;/span&gt;'">
+      </div>
+
+      <p class="footer-disclaimer">
+        © 2026 Sun Valley Reverse. All loans originated by Marcus Reeves, NMLS #1847293, and
+        underwritten by Guild Mortgage Company, LLC, NMLS #3274. Equal Housing Opportunity.
+        Reverse mortgages are FHA-insured Home Equity Conversion Mortgages (HECM) and are subject
+        to HUD eligibility requirements. Consult a tax advisor and HUD-approved counselor before
+        proceeding.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Active section indicator for side nav
+    const navItems = document.querySelectorAll('.sidenav-item');
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.pageYOffset >= s.offsetTop - 220) current = s.getAttribute('id');
+      });
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+</body>
+</html>

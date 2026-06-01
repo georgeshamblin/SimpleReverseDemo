@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jameson Whitfield | Senior Reverse Mortgage Advisor | Peachtree Reverse Mortgage Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --forest: #1f4d3a;
+      --forest-deep: #163528;
+      --peach: #e8a87c;
+      --sienna: #c9622f;
+      --ivory: #faf7f0;
+      --bone: #f1ece0;
+      --charcoal: #1a1a1a;
+      --rule-gold: #b08a4a;
+      --muted: #6b6b66;
+      --serif: 'Cormorant Garamond', 'Libre Caslon Text', Georgia, serif;
+      --sans: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.65;
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Type System ---------- */
+    .smallcaps {
+      font-family: var(--sans);
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    .display-serif {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+    }
+
+    .italic-pull {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* ---------- Thin gold rule ---------- */
+    .rule {
+      display: block;
+      height: 1px;
+      background: var(--rule-gold);
+      border: 0;
+      width: 64px;
+      margin: 1.25rem 0;
+    }
+
+    .rule-wide { width: 100%; opacity: 0.4; }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(250, 247, 240, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 1000;
+      padding: 1.1rem 3.5rem;
+      border-bottom: 1px solid rgba(176, 138, 74, 0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .nav-brand .mark {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--forest);
+      letter-spacing: 0.01em;
+    }
+    .nav-brand .mark em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sienna);
+    }
+    .nav-brand .kicker {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--charcoal);
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s var(--ease);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 100%; bottom: 0;
+      height: 1px;
+      background: var(--sienna);
+      transition: right 0.4s var(--ease);
+    }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-links a:hover::after { right: 0; }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ivory);
+      background: var(--forest);
+      padding: 0.75rem 1.4rem;
+      border: 1px solid var(--forest);
+      transition: all 0.35s var(--ease);
+    }
+    .nav-cta:hover {
+      background: var(--sienna);
+      border-color: var(--sienna);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(31,77,58,0.55) 0%, rgba(22,53,40,0.78) 100%),
+        url('https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?w=1800&q=80&auto=format&fit=crop') center/cover no-repeat;
+      color: var(--ivory);
+      display: flex;
+      align-items: flex-end;
+      padding: 0 0 6rem 0;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hero-meta .issue {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--peach);
+      font-weight: 500;
+    }
+    .hero-meta .issue::before {
+      content: '— ';
+      color: var(--peach);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(3.4rem, 7vw, 6.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.015em;
+      color: var(--ivory);
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--peach);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .hero-lede {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(250, 247, 240, 0.92);
+      max-width: 32ch;
+    }
+
+    .hero-rule {
+      width: 80px; height: 1px;
+      background: var(--peach);
+      margin: 0.5rem 0;
+    }
+
+    .hero-byline {
+      display: flex;
+      gap: 2rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .hero-byline div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .hero-byline .label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--peach);
+      font-weight: 500;
+    }
+    .hero-byline .value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ivory);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 1.5rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 240, 0.7);
+      writing-mode: horizontal-tb;
+    }
+
+    .hero-folio {
+      position: absolute;
+      top: 7rem; right: 3.5rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(250, 247, 240, 0.75);
+      text-align: right;
+    }
+    .hero-folio span {
+      display: block;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--peach);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 8rem 3.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 4rem;
+    }
+    .section-header .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--sienna);
+      font-weight: 600;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      color: var(--forest);
+      max-width: 18ch;
+    }
+    .section-header h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sienna);
+    }
+
+    /* ---------- About ---------- */
+    .about {
+      background: var(--ivory);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-portrait {
+      position: relative;
+      transform: translateY(2rem);
+    }
+    .about-portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(0.15) contrast(1.02);
+    }
+    .about-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 1px solid var(--rule-gold);
+      z-index: -1;
+    }
+    .about-caption {
+      margin-top: 1.5rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      border-left: 1px solid var(--rule-gold);
+    }
+
+    .about-body {
+      padding-top: 1rem;
+    }
+
+    .about-body .pull {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sienna);
+      margin-bottom: 1rem;
+    }
+    .about-body h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.005em;
+      color: var(--forest);
+      margin-bottom: 2rem;
+    }
+    .about-body h3 em {
+      font-style: italic;
+      color: var(--sienna);
+      font-weight: 400;
+    }
+
+    .about-body p {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 1.4rem;
+    }
+
+    .dropcap::first-letter {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 5.2rem;
+      float: left;
+      line-height: 0.88;
+      padding: 0.45rem 0.85rem 0 0;
+      color: var(--forest);
+      font-style: italic;
+    }
+
+    .about-sig {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .about-sig .sig-name {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--forest);
+    }
+    .about-sig .sig-meta {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-left: 1px solid var(--rule-gold);
+      padding-left: 1.2rem;
+    }
+
+    /* ---------- City Section ---------- */
+    .city {
+      background: var(--forest);
+      color: var(--ivory);
+      max-width: 100%;
+      padding: 8rem 0;
+      margin: 0;
+    }
+    .city-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .city-text .eyebrow {
+      color: var(--peach);
+    }
+    .city-text h2 {
+      color: var(--ivory);
+    }
+    .city-text h2 em {
+      color: var(--peach);
+    }
+    .city-text .rule {
+      background: var(--peach);
+      margin: 1.5rem 0 2rem;
+    }
+    .city-text p {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      line-height: 1.65;
+      color: rgba(250, 247, 240, 0.88);
+      margin-bottom: 1.3rem;
+    }
+    .city-text p strong {
+      color: var(--peach);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .city-neighborhoods {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 2rem;
+    }
+    .city-neighborhoods div {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--peach);
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(232, 168, 124, 0.25);
+    }
+    .city-neighborhoods div::before {
+      content: '— ';
+      opacity: 0.6;
+    }
+
+    .city-image {
+      position: relative;
+    }
+    .city-image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(0.08) saturate(1.05);
+    }
+    .city-image .tag {
+      position: absolute;
+      top: 1.5rem; left: 1.5rem;
+      background: var(--ivory);
+      color: var(--forest);
+      padding: 0.6rem 1rem;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .city-image .photo-credit {
+      position: absolute;
+      bottom: -1.6rem; right: 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: rgba(250, 247, 240, 0.6);
+    }
+
+    /* ---------- Stats / Experience ---------- */
+    .stats {
+      background: var(--bone);
+      max-width: 100%;
+      padding: 8rem 0;
+      margin: 0;
+    }
+    .stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 3.5rem;
+    }
+
+    .stats-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .stats-header .eyebrow {
+      color: var(--sienna);
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .stats-header h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      color: var(--forest);
+      line-height: 1.08;
+      max-width: 24ch;
+      margin: 0 auto;
+    }
+    .stats-header h2 em {
+      font-style: italic;
+      color: var(--sienna);
+    }
+    .stats-header .rule {
+      margin: 1.5rem auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule-gold);
+      border-bottom: 1px solid var(--rule-gold);
+    }
+    .stat {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(176, 138, 74, 0.4);
+      position: relative;
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat .num {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(3.2rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--forest);
+      letter-spacing: -0.02em;
+    }
+    .stat .num em {
+      font-style: italic;
+      color: var(--sienna);
+      font-weight: 400;
+    }
+    .stat .label {
+      margin-top: 1rem;
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .stats-foot {
+      margin-top: 4rem;
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    /* ---------- Experience editorial block ---------- */
+    .experience {
+      background: var(--ivory);
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+      gap: 5rem;
+    }
+    .exp-left .smallcaps {
+      color: var(--sienna);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .exp-left h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      color: var(--forest);
+    }
+    .exp-left h2 em {
+      font-style: italic;
+      color: var(--sienna);
+      font-weight: 400;
+    }
+    .exp-left .quote {
+      margin-top: 2.5rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--muted);
+      padding-left: 1.4rem;
+      border-left: 2px solid var(--rule-gold);
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .exp-item {
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(176, 138, 74, 0.3);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      align-items: baseline;
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-item .no {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2rem;
+      color: var(--sienna);
+      font-weight: 400;
+    }
+    .exp-item h4 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.6rem;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+    .exp-item p {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      line-height: 1.55;
+    }
+
+    /* ---------- Location / Map ---------- */
+    .location {
+      background: var(--forest-deep);
+      color: var(--ivory);
+      max-width: 100%;
+      padding: 8rem 0;
+      margin: 0;
+    }
+    .location-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 3.5rem;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .location-text .eyebrow { color: var(--peach); }
+    .location-text h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      color: var(--ivory);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .location-text h2 em { font-style: italic; color: var(--peach); font-weight: 400; }
+
+    .location-text .rule {
+      background: var(--peach);
+      margin: 1.5rem 0 2rem;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-top: 1.5rem;
+    }
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .contact-row .label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--peach);
+      font-weight: 600;
+    }
+    .contact-row .value {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--ivory);
+    }
+    .contact-row a:hover { color: var(--peach); }
+
+    .map-wrap {
+      position: relative;
+      border: 1px solid rgba(232, 168, 124, 0.3);
+      padding: 8px;
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 500px;
+      display: block;
+      border: 0;
+      filter: grayscale(0.3) contrast(0.95);
+    }
+    .map-tag {
+      position: absolute;
+      top: -14px; left: 1.5rem;
+      background: var(--forest-deep);
+      padding: 0 0.8rem;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--peach);
+      font-weight: 600;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 5rem 3.5rem 2.5rem;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(176, 138, 74, 0.25);
+    }
+    .footer-brand .mark {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.8rem;
+      color: var(--ivory);
+    }
+    .footer-brand .mark em {
+      font-style: italic;
+      color: var(--peach);
+      font-weight: 400;
+    }
+    .footer-brand p {
+      margin-top: 1rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(250, 247, 240, 0.65);
+      max-width: 38ch;
+      line-height: 1.55;
+    }
+
+    .footer-col h5 {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--peach);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .footer-col li {
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      color: rgba(250, 247, 240, 0.78);
+    }
+    .footer-col a:hover { color: var(--peach); }
+
+    .footer-lender {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .lender-block {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .lender-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .lender-logo {
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1) opacity(0.92);
+    }
+    .lender-text-fallback {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      font-size: 1.1rem;
+      color: var(--ivory);
+    }
+
+    .nmls-line {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .footer-disclaimer {
+      margin-top: 2.5rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      line-height: 1.7;
+      color: rgba(250, 247, 240, 0.45);
+      max-width: 90ch;
+    }
+
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(176, 138, 74, 0.18);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 1.5rem; }
+      .hero-inner, .city-inner, .location-inner,
+      .stats-inner, .about-grid, .exp-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+        padding: 0 1.5rem;
+      }
+      .hero { padding-bottom: 4rem; }
+      .hero-folio { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(1), .stat:nth-child(2) {
+        border-bottom: 1px solid rgba(176,138,74,0.4);
+      }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-lender { flex-direction: column; align-items: flex-start; }
+      .nmls-line { text-align: left; }
+      .about-portrait { transform: none; }
+      .about-portrait::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav>
+    <div class="nav-brand">
+      <a href="#" class="mark">Peachtree <em>Reverse</em></a>
+      <div class="kicker">Mortgage Group · Est. Atlanta</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">The Advisor</a></li>
+      <li><a href="#city">Atlanta</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#visit" class="nav-cta">Schedule a Sit-Down</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-folio">
+      <span>Volume XIX · The Atlanta File</span>
+      A study in legacy, equity & the long porch.
+    </div>
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <div class="issue">A Peachtree Reverse Profile</div>
+        <h1>Jameson <em>Whitfield</em>.</h1>
+      </div>
+      <div class="hero-right">
+        <p class="hero-lede">
+          For nineteen years, Jamie has guided Atlanta families through the quiet, deliberate work of turning a lifetime of equity into a lifetime of choice.
+        </p>
+        <div class="hero-rule"></div>
+        <div class="hero-byline">
+          <div>
+            <span class="label">The Advisor</span>
+            <span class="value">Senior Reverse Mortgage Advisor</span>
+          </div>
+          <div>
+            <span class="label">Filed From</span>
+            <span class="value">Buckhead, Atlanta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">Continue Reading ↓</div>
+  </header>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="about">
+    <div class="section-header">
+      <span class="eyebrow">Feature · The Advisor</span>
+      <h2>An <em>old-fashioned</em> kind of counsel, in a thoroughly modern market.</h2>
+      <hr class="rule">
+    </div>
+
+    <div class="about-grid">
+      <div class="about-portrait">
+        <img src="https://images.unsplash.com/photo-1750853752220-0facda334bd7?w=500&h=650&fit=crop&q=80" alt="Portrait of Jameson 'Jamie' Whitfield">
+        <div class="about-caption">
+          Jamie photographed in the library of the Buckhead office, spring 2024. He keeps his grandfather's slide rule on the desk — "a reminder that the math always matters."
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="pull">A Profile · By Peachtree Reverse</div>
+        <h3>Equity, <em>unhurried.</em></h3>
+
+        <p class="dropcap">
+          Jamie Whitfield grew up between a tobacco farm outside Macon and a brick bungalow in Virginia-Highland — a Southern childhood, by his own telling, that taught him two things above all others: that homes hold more than walls, and that a family's worth ought never be measured by a single quarter's spreadsheet.
+        </p>
+
+        <p>
+          Nineteen years on, those convictions still shape how he practices. As a Senior Reverse Mortgage Advisor with Peachtree Reverse Mortgage Group, Jamie has quietly become one of the Southeast's most sought-after counselors for homeowners aged sixty-two and over — guiding more than nineteen hundred families through HECM lines, jumbo reverse products, and the increasingly elegant world of reverse-for-purchase transactions.
+        </p>
+
+        <p>
+          He underwrites through <em class="italic-pull">Movement Mortgage</em> — a partnership he chose for its Southeastern footprint, its operational discipline, and, as he likes to put it, "the simple fact that they answer the phone." Together they've funded north of half a billion dollars in reverse transactions for Georgia families who, by and large, are not looking to leave Atlanta — only to live in it more comfortably.
+        </p>
+
+        <p>
+          What sets Jamie apart, his clients say, is patience. There are no whiteboards, no scripted pitches. Most first conversations happen over chicory coffee at his Buckhead office, or, if you'd rather, on your own front porch.
+        </p>
+
+        <div class="about-sig">
+          <div class="sig-name">— Jamie Whitfield</div>
+          <div class="sig-meta">NMLS #2046182<br>Senior Reverse Mortgage Advisor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CITY ============ -->
+  <section id="city" class="city">
+    <div class="city-inner">
+      <div class="city-text">
+        <span class="eyebrow" style="color: var(--peach); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600;">Dispatch · Atlanta, Georgia</span>
+        <h2>A city of <em>porches,</em> peaches & long memory.</h2>
+        <hr class="rule">
+
+        <p>
+          Atlanta is, among other things, a city that <strong>refuses to forget</strong>. Its bungalows still wear their original wraparound porches; its grandparents still host Sunday supper; its retirees, increasingly, are choosing to stay rather than chase the Florida sun. The reason is rarely complicated — the grandkids are here.
+        </p>
+
+        <p>
+          From <strong>Buckhead's tree-lined estates</strong> to the craftsman homes of <strong>Virginia-Highland</strong>, the high-rise pied-à-terres of <strong>Midtown</strong>, and the close-in charm of <strong>Decatur</strong>, Jamie's clients tend to share a single quiet goal: to age inside the home they raised a family in, without trading dignity for liquidity.
+        </p>
+
+        <p>
+          The <strong>BeltLine</strong> has only accelerated the trend. Homes that once felt suburban now feel central, and equity that once sat dormant has compounded into something genuinely useful. A well-structured reverse mortgage — Jamie will tell you, slowly, over a second cup — can turn that compounding into a monthly check, a line of credit, or simply the peace of knowing the mortgage payment is gone for good.
+        </p>
+
+        <div class="city-neighborhoods">
+          <div>Buckhead</div>
+          <div>Midtown</div>
+          <div>Virginia-Highland</div>
+          <div>Decatur</div>
+          <div>Inman Park</div>
+          <div>Druid Hills</div>
+          <div>Morningside</div>
+          <div>Brookhaven</div>
+        </div>
+      </div>
+
+      <div class="city-image">
+        <img src="https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?w=1200&q=80&auto=format&fit=crop" alt="The Atlanta skyline at golden hour">
+        <div class="tag">Atlanta · GA</div>
+        <div class="photo-credit">— View toward Midtown, golden hour.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stats-header">
+        <span class="eyebrow">By the Numbers</span>
+        <h2>Nineteen years. <em>Nineteen hundred</em> families. One city.</h2>
+        <hr class="rule">
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="num">19<em>+</em></div>
+          <div class="label">Years of Practice</div>
+        </div>
+        <div class="stat">
+          <div class="num">1,950<em>+</em></div>
+          <div class="label">Families Served</div>
+        </div>
+        <div class="stat">
+          <div class="num">$545<em>M+</em></div>
+          <div class="label">Equity Unlocked</div>
+        </div>
+        <div class="stat">
+          <div class="num">4.9<em>★</em></div>
+          <div class="label">Client Rating</div>
+        </div>
+      </div>
+
+      <div class="stats-foot">
+        — All figures verified by Peachtree Reverse Mortgage Group as of Q1, internal records.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE / APPROACH ============ -->
+  <section id="approach" class="experience">
+    <div class="exp-grid">
+      <div class="exp-left">
+        <span class="smallcaps">The Approach</span>
+        <h2>Four <em>tenets,</em> drawn from nineteen years of listening.</h2>
+        <div class="quote">
+          "A reverse mortgage isn't a product. It's a conversation about what you want the next twenty years to look like — and then the math to support it."
+          <br><br>— Jamie
+        </div>
+      </div>
+
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="no">i.</div>
+          <div>
+            <h4>The family is the client.</h4>
+            <p>Every recommendation is reviewed alongside adult children, trusted advisors, and — where it's wanted — the family's CPA or estate attorney. Nothing is signed in private.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="no">ii.</div>
+          <div>
+            <h4>Equity as a tool, never a temptation.</h4>
+            <p>A HECM line of credit, a tenure payment, a reverse-for-purchase — each instrument is selected to solve a stated problem, not to maximize a draw.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="no">iii.</div>
+          <div>
+            <h4>The home stays the home.</h4>
+            <p>Multigenerational households are increasingly the norm in Atlanta. Structures are built to keep the home in the family — not out of it.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="no">iv.</div>
+          <div>
+            <h4>Plain English. Always.</h4>
+            <p>If a clause cannot be explained over coffee to a grandparent, it has no business being signed by one. Disclosures are read aloud. Questions are welcomed twice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCATION / MAP ============ -->
+  <section id="visit" class="location">
+    <div class="location-inner">
+      <div class="location-text">
+        <span class="eyebrow" style="color: var(--peach); font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600;">Visit · Buckhead Office</span>
+        <h2>Come <em>sit a while.</em></h2>
+        <hr class="rule">
+
+        <p style="font-family: var(--serif); font-size: 1.15rem; color: rgba(250,247,240,0.85); line-height: 1.6;">
+          The Peachtree Reverse office sits on the eighteenth floor of a quiet tower along Peachtree Road, two blocks from Lenox. There is good coffee, a long table, and no clock on the wall. First consultations are always at no cost.
+        </p>
+
+        <div class="contact-block">
+          <div class="contact-row">
+            <span class="label">Office</span>
+            <span class="value">3340 Peachtree Rd NE, Suite 1800<br>Atlanta, GA 30326</span>
+          </div>
+          <div class="contact-row">
+            <span class="label">Telephone</span>
+            <span class="value"><a href="tel:+14045550192">(404) 555-0192</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="label">Correspondence</span>
+            <span class="value"><a href="mailto:jamie@peachtreereverse.com">jamie@peachtreereverse.com</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="label">Hours</span>
+            <span class="value">Monday – Friday · 9 to 5<br>Saturday by appointment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-tag">The Office</div>
+        <iframe
+          src="https://www.google.com/maps?q=3340+Peachtree+Rd+NE,+Suite+1800,+Atlanta,+GA+30326&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Peachtree Reverse Mortgage Group — Buckhead Office">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="mark">Peachtree <em>Reverse</em></div>
+          <p>An Atlanta practice devoted to the quiet, unhurried work of helping Southern families turn equity into ease.</p>
+        </div>
+        <div class="footer-col">
+          <h5>The Practice</h5>
+          <ul>
+            <li><a href="#about">The Advisor</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#city">Atlanta</a></li>
+            <li><a href="#visit">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li>HECM Reverse Mortgages</li>
+            <li>Jumbo Reverse Loans</li>
+            <li>Reverse for Purchase</li>
+            <li>HECM Line of Credit</li>
+            <li>Refinance Counsel</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Direct</h5>
+          <ul>
+            <li>(404) 555-0192</li>
+            <li>jamie@peachtreereverse.com</li>
+            <li>3340 Peachtree Rd NE<br>Suite 1800, Atlanta GA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-lender">
+        <div class="lender-block">
+          <span class="lender-label">Underwritten By</span>
+          <img class="lender-logo"
+               src="https://movement.com/wp-content/themes/movement/img/logo.svg"
+               alt="Movement Mortgage"
+               onerror="this.outerHTML='<span class=\'lender-text-fallback\'>MOVEMENT MORTGAGE</span>'">
+        </div>
+        <div class="nmls-line">
+          Jameson Whitfield · NMLS #2046182<br>
+          Peachtree Reverse Mortgage Group · NMLS #1184307
+        </div>
+      </div>
+
+      <p class="footer-disclaimer">
+        This material is not from HUD or FHA and was not approved by HUD or any government agency. Peachtree Reverse Mortgage Group is a DBA of a Movement Mortgage, LLC correspondent. Loans subject to credit, age (62+), property, and occupancy requirements. Borrowers must continue to pay property taxes, homeowner's insurance, and maintain the property. Failure to meet these requirements may result in loan default. Consult a tax advisor regarding tax implications. Equal Housing Lender.
+      </p>
+
+      <div class="footer-bottom">
+        <div>© 2026 Peachtree Reverse Mortgage Group · Atlanta</div>
+        <div>Privacy · Licensing · Accessibility</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
