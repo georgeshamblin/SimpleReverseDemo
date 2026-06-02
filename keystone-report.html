@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Keystone Finance Group — AI Visibility Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --red:#ef4444;
+  --orange:#f97316;
+  --yellow:#eab308;
+  --green:#22c55e;
+  --dark:#0a0a0f;
+  --dark2:#111118;
+  --card:#16161e;
+  --border:rgba(255,255,255,.08);
+  --mute:rgba(255,255,255,.45);
+  --white:#f8f8fc;
+  --sans:'Inter',sans-serif;
+  --display:'Space Grotesk',sans-serif;
+}
+body{background:var(--dark);color:var(--white);font-family:var(--sans);line-height:1.5;overflow-x:hidden}
+
+/* NAV */
+.nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,15,.85);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:var(--display);font-weight:600;font-size:15px;color:var(--white);display:flex;align-items:center;gap:10px}
+.nav-logo::before{content:"";width:8px;height:8px;background:var(--red);border-radius:50%;display:inline-block}
+.nav-date{font-size:12px;color:var(--mute);letter-spacing:.08em}
+
+/* HERO */
+.hero{padding:80px 40px 60px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(239,68,68,.12), transparent 70%);pointer-events:none}
+.hero-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px;font-weight:500}
+.hero h1{font-family:var(--display);font-size:clamp(36px,6vw,72px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:16px}
+.hero h1 span{color:var(--red)}
+.hero-sub{color:var(--mute);font-size:16px;max-width:520px;margin:0 auto 48px}
+
+/* SCORE HERO */
+.score-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+.score-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 24px;text-align:center;position:relative;overflow:hidden}
+.score-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+.score-city{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.score-num{font-family:var(--display);font-size:80px;font-weight:700;line-height:1;color:var(--red);margin-bottom:8px}
+.score-label{font-size:12px;color:var(--mute)}
+
+/* SECTION */
+.section{padding:64px 40px;border-bottom:1px solid var(--border);max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500}
+.section-title{font-family:var(--display);font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.02em;margin-bottom:40px;line-height:1.1}
+
+/* PLATFORM GRID */
+.platform-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+@media(max-width:900px){.platform-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:500px){.platform-grid{grid-template-columns:repeat(2,1fr)}}
+.platform-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center}
+.platform-icon{width:40px;height:40px;border-radius:10px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.platform-name{font-size:11px;font-weight:500;letter-spacing:.04em;margin-bottom:10px;color:rgba(255,255,255,.7)}
+.platform-pct{font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)}
+.platform-sub{font-size:10px;color:var(--mute);margin-top:4px}
+
+/* LOCATION TABLE */
+.loc-table{width:100%;border-collapse:collapse}
+.loc-table th{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);text-align:left;padding:0 16px 16px;font-weight:500}
+.loc-table td{padding:14px 16px;border-top:1px solid var(--border);font-size:14px}
+.loc-table tr:hover td{background:rgba(255,255,255,.02)}
+.loc-name{font-weight:600;font-size:15px}
+.loc-url{color:var(--mute);font-size:12px;margin-top:2px}
+.zero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25);color:var(--red);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:600}
+.zero-dot{width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0}
+.bar-wrap{width:140px;height:6px;background:rgba(255,255,255,.08);border-radius:3px;display:inline-block;vertical-align:middle}
+
+/* BENCHMARK */
+.bench-row{display:flex;align-items:center;gap:0;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:6px 8px;max-width:600px;margin:0 auto 48px;position:relative}
+.bench-seg{flex:1;text-align:center;font-size:11px;padding:8px 4px;border-radius:100px}
+.bench-seg.active{background:rgba(239,68,68,.15);color:var(--red);font-weight:600}
+.bench-seg:not(.active){color:var(--mute)}
+
+/* OPPORTUNITY */
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:700px){.opp-grid{grid-template-columns:1fr}}
+.opp-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
+.opp-num{font-family:var(--display);font-size:42px;font-weight:700;line-height:1;margin-bottom:8px}
+.opp-num.green{color:var(--green)}
+.opp-num.orange{color:var(--orange)}
+.opp-num.yellow{color:var(--yellow)}
+.opp-label{font-size:13px;color:var(--mute);line-height:1.5}
+
+/* CTA */
+.cta-section{padding:80px 40px;text-align:center}
+.cta-section h2{font-family:var(--display);font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-.03em;margin-bottom:16px}
+.cta-section p{color:var(--mute);max-width:480px;margin:0 auto 32px;font-size:15px}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;border-radius:100px;padding:16px 32px;font-weight:600;font-size:15px;text-decoration:none;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+
+/* FOOTER */
+footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mute)}
+
+@media(max-width:700px){
+  .nav,.section,.hero,.cta-section,footer{padding-left:20px;padding-right:20px}
+  .score-trio{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Anderson Collaborative × RankPrompt</div>
+  <div class="nav-date">June 2, 2026 · Confidential</div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:80px 40px 60px;text-align:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(239,68,68,.12), transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:1">
+    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:20px;font-weight:500">AI Visibility Report · Keystone Finance Group</div>
+    <h1 style="font-family:var(--display);font-size:clamp(36px,6vw,72px);font-weight:700;line-height:.95;letter-spacing:-.03em;margin-bottom:16px">
+      You're invisible<br>to <span style="color:var(--red)">every AI.</span>
+    </h1>
+    <p style="color:var(--mute);font-size:16px;max-width:480px;margin:0 auto 48px">Across 3 locations and 7 AI platforms, Keystone Finance Group appeared in <strong style="color:#fff">0 out of 210</strong> AI-generated responses.</p>
+
+    <!-- Three location scores -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:800px;margin:0 auto">
+      <div style="background:var(--card);border:1px solid rgba(239,68,68,.25);border-radius:20px;padding:28px 20px;text-align:center">
+        <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:10px">Birmingham</div>
+        <div style="font-family:var(--display);font-size:72px;font-weight:700;line-height:1;color:var(--red)">0</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:6px">0 / 210 responses</div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(239,68,68,.25);border-radius:20px;padding:28px 20px;text-align:center">
+        <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:10px">Trussville</div>
+        <div style="font-family:var(--display);font-size:72px;font-weight:700;line-height:1;color:var(--red)">0</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:6px">0 / 210 responses</div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(239,68,68,.25);border-radius:20px;padding:28px 20px;text-align:center">
+        <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:10px">Lincoln</div>
+        <div style="font-family:var(--display);font-size:72px;font-weight:700;line-height:1;color:var(--red)">0</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:6px">0 / 210 responses</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM BREAKDOWN -->
+<div style="max-width:1100px;margin:0 auto;padding:64px 40px;border-bottom:1px solid var(--border)">
+  <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500">Platform Breakdown</div>
+  <div style="font-family:var(--display);font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px">Not found on any platform.</div>
+  <p style="color:var(--mute);font-size:14px;margin-bottom:36px">30 queries per platform. 0 mentions across all 7.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:12px">
+
+    <!-- ChatGPT -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#000;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1)">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="4" fill="#000"/><path d="M12.9851 6.93777C13.1163 6.54364 13.1618 6.12607 13.1186 5.71295C13.0754 5.29983 12.9444 4.90072 12.7344 4.54231C12.4232 4.00021 11.9478 3.57101 11.3768 3.31664C10.8058 3.06227 10.1687 2.99589 9.55751 3.12706C9.28184 2.81639 8.943 2.56818 8.56362 2.39905C8.18425 2.22993 7.77314 2.14379 7.3578 2.1464C6.73292 2.1449 6.1237 2.34187 5.61797 2.70892C5.11225 3.07598 4.73616 3.59415 4.54391 4.18873C4.13684 4.27206 3.75225 4.44139 3.41591 4.68539C3.07957 4.92938 2.79924 5.24241 2.59368 5.60352C2.27994 6.14413 2.14602 6.77039 2.21123 7.39205C2.27644 8.01367 2.5374 8.59851 2.95649 9.06224C2.82527 9.45637 2.77975 9.87394 2.82297 10.2871C2.8662 10.7002 2.99718 11.0993 3.20713 11.4577C3.51841 11.9998 3.99385 12.4289 4.56484 12.6833C5.13584 12.9377 5.77289 13.0041 6.38407 12.8729C6.65975 13.1836 6.99862 13.4318 7.37796 13.601C7.75734 13.7701 8.16844 13.8562 8.58379 13.8536C9.20899 13.8552 9.81853 13.6582 10.3244 13.2909C10.8304 12.9236 11.2065 12.4051 11.3986 11.8101C11.8057 11.7268 12.1903 11.5575 12.5266 11.3135C12.8629 11.0695 13.1433 10.7564 13.3488 10.3953C13.6622 9.85477 13.7958 9.22866 13.7304 8.60726C13.6651 7.98587 13.4041 7.40129 12.9851 6.93777Z" fill="white"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">ChatGPT 5</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- Perplexity -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#1a0533;margin:0 auto 12px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="#20c997" stroke-width="1.5" fill="none"/><path d="M12 2v20M4 7l8 5 8-5" stroke="#20c997" stroke-width="1.5"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">Perplexity</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- AI Mode -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#1a1a2e;margin:0 auto 12px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285f4"/><stop offset="33%" stop-color="#ea4335"/><stop offset="66%" stop-color="#fbbc04"/><stop offset="100%" stop-color="#34a853"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#g1)" opacity=".9"/><text x="12" y="17" text-anchor="middle" fill="white" font-size="12" font-weight="bold">G</text></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">AI Mode</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- Claude -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#1a0a00;margin:0 auto 12px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" fill="#d4793b" opacity=".9"/><path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">Claude</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- Claude Search -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#1a0a00;margin:0 auto 12px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="6" stroke="#d4793b" stroke-width="1.8"/><path d="M15 15l4 4" stroke="#d4793b" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">Claude Search</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- Gemini -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#0d1b2e;margin:0 auto 12px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4285f4"/><stop offset="100%" stop-color="#8ab4f8"/></linearGradient></defs><path d="M12 2C6 12 6 12 12 22 18 12 18 12 12 2z" fill="url(#g2)"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">Gemini</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+    <!-- Grok -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 12px;text-align:center">
+      <div style="width:40px;height:40px;border-radius:10px;background:#000;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </div>
+      <div style="font-size:10px;font-weight:500;letter-spacing:.04em;margin-bottom:8px;color:rgba(255,255,255,.6)">Grok</div>
+      <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--red)">0%</div>
+      <div style="font-size:9px;color:var(--mute);margin-top:4px">0/30</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHERE YOU STAND -->
+<div style="max-width:1100px;margin:0 auto;padding:64px 40px;border-bottom:1px solid var(--border)">
+  <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500">Benchmark</div>
+  <div style="font-family:var(--display);font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-.02em;margin-bottom:32px">Where you stand.</div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 40px">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+      <div style="font-size:13px;color:var(--mute);white-space:nowrap">Your score</div>
+      <div style="flex:1;height:12px;background:rgba(255,255,255,.06);border-radius:6px;position:relative;overflow:hidden">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--red);border-radius:6px;box-shadow:0 0 12px rgba(239,68,68,.6)"></div>
+        <!-- gradient fill showing where others are -->
+        <div style="position:absolute;right:0;top:0;bottom:0;left:20%;background:linear-gradient(90deg, rgba(234,179,8,.15), rgba(34,197,94,.2));border-radius:0 6px 6px 0"></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center">
+      <div style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:20px">
+        <div style="font-family:var(--display);font-size:32px;font-weight:700;color:var(--red)">0</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:4px">Your Score</div>
+      </div>
+      <div style="background:rgba(234,179,8,.06);border:1px solid rgba(234,179,8,.15);border-radius:12px;padding:20px">
+        <div style="font-family:var(--display);font-size:32px;font-weight:700;color:var(--yellow)">Median</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:4px">Industry Average</div>
+      </div>
+      <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:12px;padding:20px">
+        <div style="font-family:var(--display);font-size:32px;font-weight:700;color:var(--green)">Top 10%</div>
+        <div style="font-size:11px;color:var(--mute);margin-top:4px">Best in Class</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPPORTUNITY -->
+<div style="max-width:1100px;margin:0 auto;padding:64px 40px;border-bottom:1px solid var(--border)">
+  <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:500">The Opportunity</div>
+  <div style="font-family:var(--display);font-size:clamp(24px,3.5vw,38px);font-weight:700;letter-spacing:-.02em;margin-bottom:36px">The gap is wide open.</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px">
+      <div style="font-family:var(--display);font-size:48px;font-weight:700;color:var(--green);line-height:1;margin-bottom:10px">630</div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.5">Total AI queries monitored across 3 locations — none returned Keystone</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px">
+      <div style="font-family:var(--display);font-size:48px;font-weight:700;color:var(--orange);line-height:1;margin-bottom:10px">7</div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.5">AI platforms actively recommending competitors instead of you</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px">
+      <div style="font-family:var(--display);font-size:48px;font-weight:700;color:var(--yellow);line-height:1;margin-bottom:10px">3×</div>
+      <div style="font-size:13px;color:var(--mute);line-height:1.5">Locations that could be capturing AI-driven leads — starting today</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="padding:80px 40px;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%, rgba(239,68,68,.1), transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:1">
+    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px;font-weight:500">Next Step</div>
+    <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-.03em;margin-bottom:16px;line-height:1">Let's fix this.<br><span style="color:var(--red)">All 3 locations.</span></h2>
+    <p style="color:var(--mute);max-width:460px;margin:0 auto 36px;font-size:15px">RankPrompt optimizes your content so every AI platform surfaces Keystone — for every location, every query.</p>
+    <a href="mailto:george@andersoncollaborative.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;border-radius:100px;padding:16px 36px;font-weight:600;font-size:15px;text-decoration:none">
+      Get started → george@andersoncollaborative.com
+    </a>
+    <div style="margin-top:20px;font-size:13px;color:var(--mute)">or call <a href="tel:+120****9894" style="color:var(--white)">205-335-9894</a></div>
+  </div>
+</div>
+
+<footer style="padding:28px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mute)">
+  <span>Anderson Collaborative × RankPrompt</span>
+  <span>Prepared for Seth Edgil · Keystone Finance Group · June 2026</span>
+</footer>
+
+</body>
+</html>
