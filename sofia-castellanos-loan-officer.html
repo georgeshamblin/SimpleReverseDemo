@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofia Castellanos | Senior Reverse Mortgage Consultant | Costa Sol Reverse Mortgage — Miami, FL</title>
+  <meta name="description" content="Sofia Castellanos — Bilingual (English/Spanish) Senior Reverse Mortgage Consultant serving Miami, Coral Gables, Coconut Grove, Brickell & Key Biscayne. 21+ years experience. NMLS #1947382.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --teal: #0d7377;
+      --teal-deep: #0a5a5d;
+      --teal-mist: #e8f1f1;
+      --coral: #ff6b6b;
+      --coral-soft: #ffb3b3;
+      --navy: #14213d;
+      --navy-soft: #1f2d4f;
+      --sand: #fef9ef;
+      --sand-warm: #f5ecd8;
+      --gold: #c9a961;
+      --gold-leaf: #d4b876;
+      --ink: #1a1f2e;
+      --muted: #5a6478;
+      --hairline: rgba(20, 33, 61, 0.12);
+      --hairline-gold: rgba(201, 169, 97, 0.45);
+      --fd: 'Marcellus', 'Cormorant Garamond', Georgia, serif;
+      --fs: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'Manrope', system-ui, -apple-system, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow-deco: 0 30px 60px -25px rgba(20, 33, 61, 0.35);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--fb);
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Reusable Art Deco bits ---------- */
+
+    /* Gold-leaf hairline */
+    .hairline-gold {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-leaf) 20%, var(--gold) 50%, var(--gold-leaf) 80%, transparent);
+      opacity: 0.65;
+      border: 0;
+    }
+
+    /* Stepped/sunburst divider */
+    .deco-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .deco-divider .line {
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .deco-divider .line.right {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .deco-divider .ornament {
+      width: 36px;
+      height: 36px;
+      position: relative;
+      flex: none;
+    }
+    .deco-divider .ornament::before,
+    .deco-divider .ornament::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+    }
+    .deco-divider .ornament::after {
+      inset: 8px;
+      border-color: var(--coral);
+      transform: rotate(45deg) scale(0.75);
+      opacity: 0.7;
+    }
+
+    /* Sunburst rays */
+    .sunburst {
+      width: 220px;
+      height: 110px;
+      position: relative;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .sunburst::before {
+      content: '';
+      position: absolute;
+      inset: auto 0 -110px 0;
+      margin: auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background:
+        repeating-conic-gradient(from -90deg at 50% 100%,
+          var(--gold) 0deg 2deg,
+          transparent 2deg 12deg);
+      opacity: 0.45;
+    }
+
+    /* Stepped (ziggurat) corner */
+    .ziggurat {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background:
+        linear-gradient(135deg, var(--gold) 0 33%, transparent 33%) 0 0/100% 33%,
+        linear-gradient(135deg, var(--gold) 0 66%, transparent 66%) 0 50%/100% 33%,
+        linear-gradient(135deg, var(--gold) 0 100%, transparent 100%) 0 100%/100% 34%;
+      background-repeat: no-repeat;
+      opacity: 0.85;
+    }
+
+    /* Palm frond (pure CSS) */
+    .palm-frond {
+      position: absolute;
+      width: 260px;
+      height: 360px;
+      pointer-events: none;
+      opacity: 0.18;
+      transform-origin: bottom center;
+    }
+    .palm-frond .stem {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, var(--teal-deep));
+      transform: translateX(-50%);
+    }
+    .palm-frond .leaf {
+      position: absolute;
+      left: 50%;
+      width: 110px;
+      height: 22px;
+      background: var(--teal);
+      border-radius: 0 100% 0 100%;
+      transform-origin: left center;
+    }
+    .palm-frond .leaf:nth-child(2) { bottom: 20%; transform: translateX(-2px) rotate(-30deg); }
+    .palm-frond .leaf:nth-child(3) { bottom: 32%; transform: translateX(-2px) rotate(-15deg); }
+    .palm-frond .leaf:nth-child(4) { bottom: 45%; transform: translateX(-2px) rotate(5deg); }
+    .palm-frond .leaf:nth-child(5) { bottom: 58%; transform: translateX(-2px) rotate(25deg); }
+    .palm-frond .leaf:nth-child(6) { bottom: 70%; transform: translateX(-2px) rotate(45deg); }
+    .palm-frond .leaf.mirror:nth-child(7) { bottom: 22%; transform: translateX(-108px) scaleX(-1) rotate(-30deg); }
+    .palm-frond .leaf.mirror:nth-child(8) { bottom: 34%; transform: translateX(-108px) scaleX(-1) rotate(-15deg); }
+    .palm-frond .leaf.mirror:nth-child(9) { bottom: 47%; transform: translateX(-108px) scaleX(-1) rotate(5deg); }
+    .palm-frond .leaf.mirror:nth-child(10) { bottom: 60%; transform: translateX(-108px) scaleX(-1) rotate(25deg); }
+    .palm-frond .leaf.mirror:nth-child(11) { bottom: 72%; transform: translateX(-108px) scaleX(-1) rotate(45deg); }
+
+    /* Section label */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--fb);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--fd);
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--navy);
+      line-height: 1.12;
+      margin: 1rem 0 1.5rem;
+    }
+    .section-title em {
+      font-family: var(--fs);
+      font-style: italic;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: rgba(254, 249, 239, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hairline);
+    }
+    nav::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-leaf), transparent);
+      opacity: 0.6;
+    }
+
+    .nav-left { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-mark {
+      width: 42px; height: 42px;
+      position: relative;
+      flex: none;
+    }
+    .nav-mark::before, .nav-mark::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid var(--teal);
+      transform: rotate(45deg);
+    }
+    .nav-mark::after {
+      inset: 8px;
+      border-color: var(--coral);
+      opacity: 0.85;
+    }
+    .nav-mark span {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: var(--fd);
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .nav-logo {
+      display: flex; flex-direction: column;
+      text-decoration: none;
+    }
+    .nav-logo .brand {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+    .nav-logo .sub {
+      font-family: var(--fb);
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: 0;
+      width: 0; height: 1px;
+      background: var(--coral);
+      transition: all 0.3s var(--ease);
+      transform: translateX(-50%);
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 0.65rem 1.4rem;
+      background: var(--navy);
+      color: var(--sand);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--gold);
+      box-shadow: inset 0 0 0 3px var(--navy), 0 0 0 1px var(--gold);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-cta:hover {
+      background: var(--coral);
+      box-shadow: inset 0 0 0 3px var(--coral), 0 0 0 1px var(--gold);
+    }
+
+    /* ---------- Hero ---------- */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 8rem 3rem 6rem;
+      display: flex;
+      align-items: center;
+      color: var(--sand);
+      background:
+        linear-gradient(135deg, rgba(13, 115, 119, 0.78), rgba(20, 33, 61, 0.82)),
+        url('https://images.unsplash.com/photo-1535498730771-e735b998cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    /* Sunburst behind hero */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1100px;
+      height: 1100px;
+      border-radius: 50%;
+      background:
+        repeating-conic-gradient(from -90deg at 50% 50%,
+          rgba(212, 184, 118, 0.10) 0deg 1.5deg,
+          transparent 1.5deg 10deg);
+      pointer-events: none;
+    }
+
+    /* Bottom stepped border */
+    #hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 38px;
+      background:
+        linear-gradient(180deg, transparent 0, transparent 12px, var(--sand) 12px, var(--sand) 14px, transparent 14px, transparent 24px, var(--sand) 24px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 4rem;
+    }
+
+    .hero-content { max-width: 720px; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold-leaf);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px; height: 1px; background: var(--gold-leaf);
+    }
+
+    .hero-title {
+      font-family: var(--fd);
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.005em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title em {
+      font-family: var(--fs);
+      font-style: italic;
+      color: var(--coral-soft);
+      font-weight: 500;
+      display: block;
+      font-size: 0.78em;
+      margin-top: 0.2em;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      max-width: 560px;
+      color: rgba(254, 249, 239, 0.88);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      margin-bottom: 2.5rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(212, 184, 118, 0.4);
+      border-bottom: 1px solid rgba(212, 184, 118, 0.4);
+    }
+    .hero-meta div {
+      display: flex; flex-direction: column;
+    }
+    .hero-meta .label {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-leaf);
+      font-weight: 600;
+    }
+    .hero-meta .value {
+      font-family: var(--fd);
+      font-size: 1.05rem;
+      color: var(--sand);
+      margin-top: 4px;
+    }
+
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary, .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.35s var(--ease);
+      position: relative;
+    }
+    .btn-primary {
+      background: var(--coral);
+      color: var(--navy);
+      box-shadow: 0 0 0 1px var(--gold), inset 0 0 0 3px var(--coral);
+    }
+    .btn-primary:hover {
+      background: var(--sand);
+      box-shadow: 0 0 0 1px var(--gold), inset 0 0 0 3px var(--sand);
+    }
+    .btn-ghost {
+      color: var(--sand);
+      border: 1px solid var(--gold-leaf);
+    }
+    .btn-ghost:hover { background: rgba(212, 184, 118, 0.15); }
+
+    .hero-badge {
+      align-self: end;
+      width: 220px;
+      padding: 1.5rem;
+      background: rgba(20, 33, 61, 0.55);
+      border: 1px solid var(--gold-leaf);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      position: relative;
+    }
+    .hero-badge::before, .hero-badge::after {
+      content: '';
+      position: absolute;
+      width: 14px; height: 14px;
+      border: 1px solid var(--gold-leaf);
+    }
+    .hero-badge::before { top: -7px; left: -7px; border-right: 0; border-bottom: 0; }
+    .hero-badge::after { bottom: -7px; right: -7px; border-left: 0; border-top: 0; }
+    .hero-badge .lang {
+      font-family: var(--fd);
+      font-size: 1.1rem;
+      color: var(--coral-soft);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-badge .lang-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-leaf);
+    }
+    .hero-badge .stars {
+      margin-top: 1rem;
+      color: var(--gold-leaf);
+      letter-spacing: 0.2em;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- About ---------- */
+    #about {
+      padding: 8rem 3rem;
+      background: var(--sand);
+      position: relative;
+    }
+    #about .palm-frond { top: 6rem; right: 2%; }
+
+    .about-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait-frame {
+      position: relative;
+      padding: 14px;
+    }
+    .portrait-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+    }
+    .portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--coral);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .portrait-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: saturate(0.95) contrast(1.02);
+    }
+    .portrait-tag {
+      position: absolute;
+      left: -1px; bottom: -1px;
+      background: var(--navy);
+      color: var(--sand);
+      padding: 0.85rem 1.25rem;
+      font-family: var(--fd);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      border: 1px solid var(--gold);
+    }
+    .portrait-tag em {
+      font-family: var(--fs);
+      font-style: italic;
+      color: var(--coral-soft);
+      text-transform: none;
+      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+      font-size: 1.02rem;
+    }
+    .about-text p strong { color: var(--navy); font-weight: 600; }
+
+    .credentials {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      position: relative;
+    }
+    .credentials::before, .credentials::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-leaf), transparent);
+    }
+    .credentials::before { top: -1px; }
+    .credentials::after { bottom: -1px; }
+    .cred {
+      display: flex; flex-direction: column;
+    }
+    .cred .k {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 600;
+    }
+    .cred .v {
+      font-family: var(--fd);
+      font-size: 1rem;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    /* ---------- Stats / Experience ---------- */
+    #experience {
+      padding: 7rem 3rem;
+      background: var(--navy);
+      color: var(--sand);
+      position: relative;
+      overflow: hidden;
+    }
+    #experience::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, transparent 0 80px, rgba(212, 184, 118, 0.05) 80px 81px);
+      pointer-events: none;
+    }
+    #experience .sunburst {
+      position: absolute;
+      top: -10px; left: 50%; transform: translateX(-50%);
+    }
+    .exp-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    #experience .section-label { color: var(--gold-leaf); }
+    #experience .section-label::before { background: var(--gold-leaf); }
+    #experience .section-title { color: var(--sand); }
+    #experience .section-title em { color: var(--coral-soft); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--hairline-gold);
+      border-bottom: 1px solid var(--hairline-gold);
+    }
+    .stat {
+      padding: 2.5rem 1rem;
+      border-right: 1px solid var(--hairline-gold);
+      position: relative;
+    }
+    .stat:last-child { border-right: 0; }
+    .stat::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: -4px;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .stat:first-child::before { display: none; }
+    .stat .n {
+      font-family: var(--fd);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      color: var(--coral-soft);
+      line-height: 1;
+    }
+    .stat .l {
+      margin-top: 0.85rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-leaf);
+    }
+
+    .exp-lead {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      font-size: 1.05rem;
+      color: rgba(254, 249, 239, 0.85);
+      font-weight: 300;
+    }
+
+    /* ---------- Miami / City ---------- */
+    #miami {
+      padding: 8rem 3rem;
+      background: var(--sand);
+      position: relative;
+    }
+    #miami .palm-frond { left: -40px; bottom: 0; transform: rotate(-15deg); }
+
+    .city-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .city-image {
+      position: relative;
+      padding: 12px;
+    }
+    .city-image::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 1px solid var(--teal);
+      opacity: 0.6;
+    }
+    .city-image::after {
+      content: '';
+      position: absolute;
+      top: -22px; left: -22px;
+      width: 70px; height: 70px;
+      background:
+        linear-gradient(135deg, var(--gold) 0 33%, transparent 33%) 0 0/100% 33%,
+        linear-gradient(135deg, var(--gold) 0 66%, transparent 66%) 0 50%/100% 33%,
+        linear-gradient(135deg, var(--gold) 0 100%, transparent 100%) 0 100%/100% 34%;
+      background-repeat: no-repeat;
+    }
+    .city-image img {
+      display: block;
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+    }
+
+    .city-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .city-text p strong { color: var(--navy); font-weight: 600; }
+
+    .neighborhoods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 1.5rem;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--hairline-gold);
+    }
+    .neighborhoods li {
+      list-style: none;
+      font-family: var(--fd);
+      color: var(--navy);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+    }
+    .neighborhoods li::before {
+      content: '';
+      width: 10px; height: 10px;
+      background: var(--coral);
+      transform: rotate(45deg);
+      flex: none;
+    }
+
+    /* ---------- Why / Services ---------- */
+    #why {
+      padding: 8rem 3rem;
+      background:
+        linear-gradient(180deg, var(--sand) 0 50%, var(--sand-warm) 50% 100%);
+      position: relative;
+    }
+    .why-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .service {
+      background: var(--sand);
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--hairline);
+      position: relative;
+      text-align: left;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .service::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid var(--hairline-gold);
+      pointer-events: none;
+    }
+    .service::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--coral));
+    }
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-deco);
+    }
+    .service .num {
+      font-family: var(--fd);
+      color: var(--coral);
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .service h3 {
+      font-family: var(--fd);
+      color: var(--navy);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 0.75rem 0 1rem;
+      letter-spacing: 0.01em;
+    }
+    .service p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    /* ---------- Contact / Map ---------- */
+    #contact {
+      padding: 8rem 3rem;
+      background: var(--sand-warm);
+      position: relative;
+    }
+    .contact-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: stretch;
+    }
+    .contact-text { display: flex; flex-direction: column; justify-content: center; }
+    .contact-details {
+      margin-top: 1.5rem;
+      display: flex; flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px dashed var(--hairline);
+      align-items: center;
+    }
+    .contact-row .k {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 600;
+    }
+    .contact-row .v {
+      font-family: var(--fd);
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+    .contact-row .v a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--coral);
+    }
+
+    .map-frame {
+      position: relative;
+      padding: 12px;
+      background: var(--sand);
+      box-shadow: var(--shadow-deco);
+    }
+    .map-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+    }
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 480px;
+      border: 0;
+      filter: grayscale(0.2) saturate(0.9);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--navy);
+      color: var(--sand);
+      padding: 5rem 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .footer-brand .brand-mark {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .footer-brand .brand-name {
+      font-family: var(--fd);
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-brand p {
+      color: rgba(254, 249, 239, 0.7);
+      font-size: 0.92rem;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-family: var(--fb);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-leaf);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      color: rgba(254, 249, 239, 0.78);
+      text-decoration: none;
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--coral-soft); }
+
+    .lender-block {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--hairline-gold);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .lender-wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.5rem;
+      border: 1px solid var(--gold-leaf);
+      position: relative;
+    }
+    .lender-wordmark::before, .lender-wordmark::after {
+      content: '';
+      position: absolute;
+      width: 12px; height: 12px;
+      border: 1px solid var(--gold-leaf);
+    }
+    .lender-wordmark::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+    .lender-wordmark::after { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+    .lender-wordmark .icon {
+      width: 28px; height: 28px;
+      position: relative;
+    }
+    .lender-wordmark .icon::before, .lender-wordmark .icon::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1.5px solid #fff; transform: rotate(45deg);
+    }
+    .lender-wordmark .icon::after { inset: 6px; opacity: 0.7; }
+    .lender-wordmark .name {
+      color: #fff;
+      font-family: var(--fd);
+      letter-spacing: 0.22em;
+      font-size: 0.92rem;
+    }
+    .lender-block .meta {
+      font-size: 0.75rem;
+      color: rgba(254, 249, 239, 0.6);
+      letter-spacing: 0.12em;
+      max-width: 480px;
+      text-align: right;
+    }
+
+    .legal {
+      max-width: 1240px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(254, 249, 239, 0.12);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.72rem;
+      color: rgba(254, 249, 239, 0.55);
+      letter-spacing: 0.08em;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero, #about, #experience, #miami, #why, #contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-badge { width: 100%; max-width: 320px; }
+      .about-grid, .city-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: 0; border-bottom: 1px solid var(--hairline-gold); }
+      .stat:nth-child(2)::before, .stat:nth-child(4)::before { display: none; }
+      .services { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .lender-block { flex-direction: column; align-items: flex-start; }
+      .lender-block .meta { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.6rem; }
+      .credentials { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .neighborhoods { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav>
+    <div class="nav-left">
+      <div class="nav-mark"><span>C</span></div>
+      <a href="#" class="nav-logo">
+        <span class="brand">Costa Sol</span>
+        <span class="sub">Reverse Mortgage · Miami</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#miami">Miami</a>
+      <a href="#why">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:+13055550167" class="nav-cta">(305) 555-0167</a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Costa Sol Reverse Mortgage · Coral Gables</div>
+        <h1 class="hero-title">
+          Sofia Castellanos
+          <em>Senior Reverse Mortgage Consultant</em>
+        </h1>
+        <p class="hero-sub">
+          Two decades guiding Miami families through the reverse mortgage process — from
+          Brickell high-rises to Coral Gables estates, Coconut Grove bungalows to Key Biscayne villas.
+          Servicio personalizado, en su idioma, con la confianza que su familia merece.
+        </p>
+
+        <div class="hero-meta">
+          <div>
+            <span class="label">Experience</span>
+            <span class="value">21+ Years</span>
+          </div>
+          <div>
+            <span class="label">NMLS</span>
+            <span class="value">#1947382</span>
+          </div>
+          <div>
+            <span class="label">Funded</span>
+            <span class="value">$610M+</span>
+          </div>
+          <div>
+            <span class="label">Languages</span>
+            <span class="value">English · Español</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-primary">Schedule a Consultation →</a>
+          <a href="tel:+13055550167" class="btn-ghost">Call Sofia Directly</a>
+        </div>
+      </div>
+
+      <aside class="hero-badge">
+        <div class="lang">Hablamos Español</div>
+        <div class="lang-sub">Bilingual Service</div>
+        <div class="stars">★★★★★</div>
+        <div class="lang-sub" style="margin-top:0.4rem;">4.9 · 2,180+ Familias</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="palm-frond" aria-hidden="true">
+      <div class="stem"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="portrait-frame">
+        <img src="https://images.unsplash.com/photo-1750853752220-0facda334bd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=650&q=80" alt="Portrait of Sofia Castellanos">
+        <div class="portrait-tag">Sofia Castellanos <em>NMLS #1947382</em></div>
+      </div>
+
+      <div class="about-text">
+        <span class="section-label">About Sofia</span>
+        <h2 class="section-title">Tu socia <em>de confianza</em> in Miami reverse lending</h2>
+
+        <p>
+          Born in Havana, raised in Hialeah, and serving the Miami community for over
+          <strong>twenty-one years</strong>, Sofia Castellanos has built her practice around one
+          guiding principle: the reverse mortgage conversation should happen at the kitchen table,
+          in the language the family speaks at home.
+        </p>
+        <p>
+          As Senior Reverse Mortgage Consultant at <strong>Costa Sol Reverse Mortgage</strong>,
+          Sofia has guided more than 2,180 South Florida families through HECM, Jumbo, and
+          purchase reverse mortgage solutions — funding over $610 million across Miami-Dade and
+          Monroe counties.
+        </p>
+        <p>
+          She specializes in multigenerational households — particularly the Latin American
+          extended-family structures common across Coral Gables and Westchester — and works
+          closely with adult children, financial advisors, and elder-law attorneys to make every
+          decision a family decision.
+        </p>
+
+        <div class="deco-divider">
+          <span class="line"></span>
+          <span class="ornament"></span>
+          <span class="line right"></span>
+        </div>
+
+        <div class="credentials">
+          <div class="cred"><span class="k">Title</span><span class="v">Senior Reverse Mortgage Consultant</span></div>
+          <div class="cred"><span class="k">NMLS</span><span class="v">#1947382</span></div>
+          <div class="cred"><span class="k">Languages</span><span class="v">English &amp; Spanish</span></div>
+          <div class="cred"><span class="k">Licensed In</span><span class="v">FL · NY · NJ · PR</span></div>
+          <div class="cred"><span class="k">Certifications</span><span class="v">CRMP · NRMLA Member</span></div>
+          <div class="cred"><span class="k">Underwritten By</span><span class="v">Plaza Home Mortgage</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE / STATS ============ -->
+  <section id="experience">
+    <div class="sunburst" aria-hidden="true"></div>
+    <div class="exp-inner">
+      <span class="section-label">Two Decades on Biscayne Bay</span>
+      <h2 class="section-title">21+ years of <em>South Florida</em> reverse mortgage expertise</h2>
+      <p class="exp-lead">
+        From the early days of HECM reform through today's Jumbo and HomeSafe products,
+        Sofia has helped Miami's senior community unlock the equity in homes earned over
+        a lifetime — and stay rooted in the neighborhoods they love.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="n">21+</div>
+          <div class="l">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="n">2,180+</div>
+          <div class="l">Families Served</div>
+        </div>
+        <div class="stat">
+          <div class="n">$610M+</div>
+          <div class="l">Funded</div>
+        </div>
+        <div class="stat">
+          <div class="n">4.9 ★</div>
+          <div class="l">Client Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MIAMI ============ -->
+  <section id="miami">
+    <div class="palm-frond" aria-hidden="true">
+      <div class="stem"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+      <div class="leaf mirror"></div>
+    </div>
+
+    <div class="city-grid">
+      <div class="city-image">
+        <img src="https://images.unsplash.com/photo-1589083130544-0d6a2926e519?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Miami Art Deco architecture and skyline">
+      </div>
+
+      <div class="city-text">
+        <span class="section-label">Our City</span>
+        <h2 class="section-title">Miami: <em>la ciudad</em> where every generation belongs</h2>
+
+        <p>
+          Miami's senior population is the fastest-growing in Florida — fueled by retirees
+          relocating from the <strong>Northeast</strong>, returning expatriates, and a deeply
+          rooted local community whose families have called Miami-Dade home for forty years
+          or more.
+        </p>
+        <p>
+          What makes our market distinct is the <strong>multigenerational household</strong>.
+          Across Coral Gables, Westchester, Kendall and the Grove, three generations frequently
+          share a single home. A reverse mortgage here is not just a financial product — it's a
+          family planning decision, and it deserves to be discussed as one.
+        </p>
+        <p>
+          From Brickell condominiums to Coral Gables Mediterranean Revivals, Coconut Grove
+          historic cottages to Key Biscayne oceanfront, Sofia structures reverse mortgage
+          solutions tailored to South Florida's unique property mix, HOA dynamics, and
+          insurance realities — including post-storm valuation considerations.
+        </p>
+
+        <ul class="neighborhoods">
+          <li>Coral Gables</li>
+          <li>Coconut Grove</li>
+          <li>Brickell</li>
+          <li>Key Biscayne</li>
+          <li>Pinecrest</li>
+          <li>South Miami</li>
+          <li>Kendall</li>
+          <li>Miami Beach</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY / SERVICES ============ -->
+  <section id="why">
+    <div class="why-inner">
+      <span class="section-label">Why Work With Sofia</span>
+      <h2 class="section-title">A reverse mortgage practice built <em>around your family</em></h2>
+
+      <div class="services">
+        <article class="service">
+          <div class="num">01</div>
+          <h3>Bilingual, Bicultural Service</h3>
+          <p>
+            Every conversation — discovery, application, counseling, closing — available
+            fluently in English or Spanish. Documents reviewed line-by-line with adult
+            children present when families prefer.
+          </p>
+        </article>
+        <article class="service">
+          <div class="num">02</div>
+          <h3>HECM, Jumbo &amp; HomeSafe</h3>
+          <p>
+            Full product suite including Jumbo proprietary reverse mortgages up to $4M —
+            essential for Coral Gables, Pinecrest, and Key Biscayne values that exceed
+            the FHA HECM limit.
+          </p>
+        </article>
+        <article class="service">
+          <div class="num">03</div>
+          <h3>Multigenerational Planning</h3>
+          <p>
+            Coordinated with adult children, CPAs, and elder-law attorneys to ensure the
+            reverse mortgage fits the broader estate, tax, and Medicaid-planning picture
+            for the whole family.
+          </p>
+        </article>
+        <article class="service">
+          <div class="num">04</div>
+          <h3>Reverse for Purchase (H4P)</h3>
+          <p>
+            Helping retirees relocating from the Northeast purchase their Florida home
+            with as little as half down and no required monthly mortgage payment for life.
+          </p>
+        </article>
+        <article class="service">
+          <div class="num">05</div>
+          <h3>Condo Specialist</h3>
+          <p>
+            Deep familiarity with Brickell, Edgewater, and Miami Beach condominium
+            associations — and the FHA / non-FHA approval pathways unique to each.
+          </p>
+        </article>
+        <article class="service">
+          <div class="num">06</div>
+          <h3>White-Glove Closings</h3>
+          <p>
+            Closings hosted at our Coral Gables office, at your home, or at your attorney's
+            office — whichever brings the most peace of mind to your family.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / MAP ============ -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="contact-text">
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title">Office in <em>Coral Gables</em></h2>
+        <p style="color: var(--muted);">
+          Our Ponce de Leon Boulevard office sits in the heart of Coral Gables — a short
+          walk from Miracle Mile and convenient to all of Miami-Dade. Consultations are
+          complimentary, confidential, and available in English or Spanish.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-row">
+            <span class="k">Phone</span>
+            <span class="v"><a href="tel:+13055550167">(305) 555-0167</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Email</span>
+            <span class="v"><a href="mailto:sofia@costasolreverse.com">sofia@costasolreverse.com</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Address</span>
+            <span class="v">2333 Ponce de Leon Blvd, Suite 600<br>Coral Gables, FL 33134</span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Hours</span>
+            <span class="v">Mon – Fri · 9:00 AM – 6:00 PM<br>Sat by appointment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=2333+Ponce+de+Leon+Blvd+Coral+Gables+FL+33134&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Costa Sol Reverse Mortgage office location, Coral Gables">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark">
+          <div class="nav-mark" style="width:46px;height:46px;"><span style="color:var(--gold-leaf);">C</span></div>
+          <div>
+            <div class="brand-name">Costa Sol</div>
+            <div style="font-size:0.62rem;letter-spacing:0.28em;color:var(--gold-leaf);text-transform:uppercase;margin-top:4px;">Reverse Mortgage</div>
+          </div>
+        </div>
+        <p>
+          Independently owned reverse mortgage practice serving Miami-Dade and the Florida
+          Keys since 2003. Underwritten by Plaza Home Mortgage, Inc.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice</h4>
+        <a href="#about">About Sofia</a>
+        <a href="#experience">Experience</a>
+        <a href="#why">Services</a>
+        <a href="#miami">Our City</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#">HECM Reverse Mortgage</a>
+        <a href="#">Jumbo Reverse (HomeSafe)</a>
+        <a href="#">Reverse for Purchase</a>
+        <a href="#">HECM Refinance</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+13055550167">(305) 555-0167</a>
+        <a href="mailto:sofia@costasolreverse.com">sofia@costasolreverse.com</a>
+        <p style="margin:0;color:rgba(254,249,239,0.6);">2333 Ponce de Leon Blvd<br>Suite 600, Coral Gables, FL 33134</p>
+      </div>
+    </div>
+
+    <div class="lender-block">
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <span style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-leaf);">Underwritten By</span>
+        <div class="lender-wordmark">
+          <div class="icon" aria-hidden="true"></div>
+          <span class="name">PLAZA HOME MORTGAGE</span>
+        </div>
+      </div>
+      <div class="meta">
+        Plaza Home Mortgage, Inc. NMLS #2113. Equal Housing Lender. Licensed mortgage lender in
+        all 50 states. This is not a commitment to lend.
+      </div>
+    </div>
+
+    <div class="legal">
+      <span>© 2026 Costa Sol Reverse Mortgage · Sofia Castellanos · NMLS #1947382</span>
+      <span>Privacy · Accessibility · Licensing · Equal Housing Opportunity</span>
+    </div>
+  </footer>
+
+</body>
+</html>
